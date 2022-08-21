@@ -14,10 +14,12 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export default function RowAndColumnSpacing() {
+export default function ItemListContainer(saludo) {
+  
   return (
     <div className="divCards">
-    <h4 className="cardsTittle">Productos Destacados</h4>
+    <h4 className="cardsTittle">Bienvenido {saludo.usuario}</h4>
+    <h5 className="cardsTittle">Mira nuestros productos destacados</h5>
     <Box className="boxCards" sx={{ width: '100%' }}>
       <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} justifyContent="center">
         <Grid item xs={2}>
