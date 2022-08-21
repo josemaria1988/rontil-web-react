@@ -14,6 +14,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import logo from '../../assets/img/logo.png'
+import perritos from '../../assets/img/sobrenosotros.jpg'
+import CartWidget from '../CartWidget/CartWidget.jsx'
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -37,8 +40,8 @@ export default function ProductCard() {
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+          <Avatar sx={{ bgcolor: red[500] }}>
+            <img src={logo}></img>
           </Avatar>
         }
         action={
@@ -52,8 +55,8 @@ export default function ProductCard() {
       <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
+        image={perritos}
+        alt="Nosotros"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
@@ -63,11 +66,8 @@ export default function ProductCard() {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
+        <IconButton aria-label="add to cart">
+          <CartWidget />
         </IconButton>
         <ExpandMore
           expand={expanded}
