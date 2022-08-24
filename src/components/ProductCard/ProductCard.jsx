@@ -14,7 +14,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import logo from '../../assets/img/logo.png'
 import perritos from '../../assets/img/sobrenosotros.jpg'
-import CartWidget from '../CartWidget/CartWidget.jsx'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import ItemCount from '../CartWidget/ItemCount';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -47,8 +48,8 @@ export default function ProductCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title="Producto"
+        subheader="Agosto 2022"
       />
       <CardMedia
         component="img"
@@ -65,7 +66,11 @@ export default function ProductCard() {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to cart">
-          <CartWidget />
+
+          <ItemCount cantidad="1" stock="10"/>
+          
+        <AddShoppingCartIcon />
+      
         </IconButton>
         <ExpandMore
           expand={expanded}
