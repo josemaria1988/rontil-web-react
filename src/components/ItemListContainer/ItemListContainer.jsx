@@ -1,49 +1,35 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './ItemListContainer.scss'
-import ProductCard from '../ProductCard/ProductCard.jsx'
-import { experimentalStyled as styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
+import ItemCount from '../ItemCount/ItemCount.jsx'
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
 
-export default function ItemListContainer(saludo) {
+
+ const producto = {
+  nombre: "Producto",
+  precio: 1000,
+  cantidad: 1,
+  stock: 6
+ }
+  
+export default function ItemListContainer() {
+    
+  const [counter, setCounter] = useState(1);
+
+  const onAdd = () => {
+    if(counter < producto.stock) setCounter(counter + 1)
+  }
+
+  const onDecrement = () => {
+    if(counter > producto.cantidad) setCounter(counter - 1)
+  }
   
   return (
     <div className="divCards">
-    <h4 className="cardsTittle">Bienvenido {saludo.usuario}</h4>
-    <h5 className="cardsTittle">Mira nuestros productos destacados</h5>
-    <Box className="boxCards" sx={{ width: '100%' }}>
-      <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} justifyContent="center">
-        <Grid item xs={2}>
-          <Item>
-            <ProductCard/>
-          </Item>
-        </Grid>
-        <Grid item xs={2}>
-          <Item>
-            <ProductCard/>
-          </Item>
-        </Grid>
-        <Grid item xs={2}>
-          <Item>
-            <ProductCard/>
-          </Item>
-        </Grid>
-        <Grid item xs={2}>
-          <Item>
-            <ProductCard/>
-          </Item>
-        </Grid>
-      </Grid>
-    </Box>
+      <h4 className="cardsTittle">Producto 1</h4>
+      <h5 className="cardsTittle">Stock disponible 6 unidades</h5>
+
+      <ItemCount counter={counter} onAdd={onAdd} onDecrement={onDecrement}/>
+
     </div>
   );
 }

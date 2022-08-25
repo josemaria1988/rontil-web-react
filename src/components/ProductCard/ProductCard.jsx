@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -30,10 +30,13 @@ const ExpandMore = styled((props) => {
 
 export default function ProductCard() {
   const [expanded, setExpanded] = React.useState(false);
+  
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -66,8 +69,6 @@ export default function ProductCard() {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to cart">
-
-          <ItemCount cantidad="1" stock="10"/>
           
         <AddShoppingCartIcon />
       
