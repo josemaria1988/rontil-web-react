@@ -1,20 +1,22 @@
 import React, {useState, useEffect} from 'react'
 import './ItemListContainer.scss'
-import ItemCount from '../ItemCount/ItemCount.jsx'
 import { pedirDatos } from "../../helpers/pedirDatos"
 import ItemList from "../ItemList/ItemList"
-
+import MoonLoader from "react-spinners/MoonLoader";
 
 export default function ItemListContainer() {
 
   const [productos, setProductos] = useState([])
+  const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         pedirDatos()
             .then( (res) => {
                 setProductos(res)
+                setLoading(false)
             })
             .catch( (error) => {
+              setLoading(false)
                 console.log(error)
             })
             .finally(() => {
@@ -23,13 +25,16 @@ export default function ItemListContainer() {
     }, [])
   
   return (
+  <>
+    {loading ? <div className="spinner" ><MoonLoader/> </div>  
+     : 
     <div className="divCards">
-      <h4 className="cardsTittle">Producto 1</h4>
-      <h5 className="cardsTittle">Stock disponible 6 unidades</h5>
+      <h4 className="cardsTittle">Productos Destacados</h4>
 
       <ItemList productos={productos}/>
-      <ItemCount />
 
     </div>
+  }
+    </>
   );
 }

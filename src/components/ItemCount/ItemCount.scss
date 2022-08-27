@@ -1,44 +1,15 @@
-.count-box {
-    display: flex;
-    width: 100%;
-    align-content: center;
-    justify-content: center;
+.btn-card {
+  
+  padding: 10px;
+  margin-top: 10px;
+  color: #034574;
+  border: 1px solid #034574;
+  border-radius: 4px;
+  transition: all 400ms ease;
 }
 
-.count-btn {
-    padding: .6rem 1rem;
-    border: 1px solid #995309;
-    border-radius: 14px;
-    background-color: #d9750b;
-    color: #fff;
-  
-    font-size: 3rem;
-    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
-    box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,
-      0 1px 3px rgba(0,0,0,.2);
-    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
-    background-image: linear-gradient(#f90 10%,#e76a00 100%);
-  }
-  
-  .count-btn:hover, .btn-3d:focus {
-    background-color: #e0811b;
-    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
-    background-image: linear-gradient(#f0a100 10%,#f70 100%);
-  }
-  
-  .count-btn:active {
-    background-color: #cf6a00;
-    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) inset;
-    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
-    background-image: linear-gradient(#f0a100 10%,#f70 100%);
-  }
-
-  .count-field {
-    font-size: 2rem;
-    margin: 15px;
-    padding: 25px;
-    background-color: #3CBC8D;
-    color: white;
-    border: 3px solid #555;
-    text-decoration: solid;
-  }
+.btn-card:hover {
+  background: #034574;
+  color: #fff;
+  cursor: pointer;
+}
