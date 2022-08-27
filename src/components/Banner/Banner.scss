@@ -6,3 +6,13 @@
 .bannerImage {
     width: 75%;
 }
+
+.spinner {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke;
+}

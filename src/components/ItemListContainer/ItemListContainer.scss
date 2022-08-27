@@ -18,7 +18,11 @@
 }
 
 .spinner {
-    display: inline-block;
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 50vh;
     justify-content: center;
-    color: brown;
+    align-items: center;
+    background: whitesmoke;
 }
