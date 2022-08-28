@@ -19,7 +19,7 @@ const Banner = () => {
         {loading ? <div className="spinner"><MoonLoader /> </div>
         :
         <div className="banner-container">
-            <img calssName="bannerImage" src={portada2} alt="banner" />
+            <img className="bannerImage" src={portada2} alt="banner" />
         </div>
     }
         </>
