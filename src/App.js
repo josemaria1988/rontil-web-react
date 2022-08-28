@@ -8,7 +8,7 @@ function App() {
     <div>
       <Navbar />
       <Banner/>
-      <ItemListContainer usuario="Desconocido"/>
+      <ItemListContainer/>
      
     </div>
   );
