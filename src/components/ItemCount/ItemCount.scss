@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .count-box {
     display: flex;
     width: 100%;
@@ -42,3 +43,20 @@
     border: 3px solid #555;
     text-decoration: solid;
   }
+=======
+.btn-card {
+  
+  padding: 10px;
+  margin-top: 10px;
+  color: #034574;
+  border: 1px solid #034574;
+  border-radius: 4px;
+  transition: all 400ms ease;
+}
+
+.btn-card:hover {
+  background: #034574;
+  color: #fff;
+  cursor: pointer;
+}
+>>>>>>> ae661d13fd6d54b99cacdc15390e08e79ac3d4fb
