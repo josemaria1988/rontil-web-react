@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import './Banner.scss'
-import portada2 from '../../assets/img/portada2.jpg'
-
-export default function Banner() {
-    return (
-        <div className="banner-container">
-            <img className="bannerImage" src={portada2} alt="banner"/>
-        </div>
-    )
-}
-=======
 import React, { useState, useEffect } from 'react'
 import './Banner.scss'
 import portada2 from '../../assets/img/portada2.jpg'
@@ -40,4 +27,3 @@ const Banner = () => {
 }
 
 export default Banner
->>>>>>> ae661d13fd6d54b99cacdc15390e08e79ac3d4fb

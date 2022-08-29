@@ -1,7 +1,3 @@
-import './App.css';
-import Navbar from './components/navbar/NavBar.jsx';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx'
-import Banner from './components/Banner/Banner.jsx'
 import './App.scss';
 import Navbar from './components/navbar/NavBar.jsx';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx'
@@ -14,8 +10,6 @@ function App() {
       <Navbar />
       <Banner/>
       <ItemListContainer/>
-=======
-      <ItemListContainer usuario="Desconocido"/>
 
       <Footer />
      

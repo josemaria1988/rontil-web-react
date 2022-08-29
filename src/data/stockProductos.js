@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-let stockProductos = [
-    {id: 1, nombre: "glelivent ", tipo: "wiskey", cantidad: 1, desc: "añejo quince años", precio: 17000,  img: './img/glelivent.jpg'},
-  {id: 2, nombre: "jager", tipo: "aperitivo", cantidad: 1, desc: "especial para la tarde", precio: 2000, img: './img/jager.png'},
-   {id: 3, nombre: "mosquitamuerta", tipo: "vino", cantidad: 1, desc: "vini tinto", precio: 1200,  img: './img/mosquitamuerta.jpg'},
-   {id: 4, nombre: "cinzano", tipo: "aperitivo", cantidad: 1, desc: "aperitivo para el dia", precio: 1400, img: './img/cinzano.png'},
-=======
 let stockProductos = [{
   id: 1, 
   nombre: "Contenedor 120 Lts ", 
@@ -55,7 +48,6 @@ let stockProductos = [{
   stock: 10,
   img: 'https://http2.mlstatic.com/D_NQ_NP_810951-MLU32027207841_082019-O.webp'
 }
->>>>>>> ae661d13fd6d54b99cacdc15390e08e79ac3d4fb
 ];
 
 export default stockProductos
