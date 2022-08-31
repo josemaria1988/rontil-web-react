@@ -1,15 +1,27 @@
-.btn-card {
-  
-  padding: 10px;
-  margin-top: 10px;
-  color: #034574;
-  border: 1px solid #034574;
+.count-box {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.btn-counter {
+  width: 50px;
+  height: 30px;
+  color: #333;
+  border: 1px solid #333;
   border-radius: 4px;
   transition: all 400ms ease;
+  cursor: pointer;
 }
 
-.btn-card:hover {
-  background: #034574;
-  color: #fff;
-  cursor: pointer;
+.btn-counter:hover {
+  background: #555;
+}
+.count-box .count-numbers {
+  margin: 15px;
+  line-height: 1.8;
+  font-size: 1.5vh;
+  font-weight: bold;
+  color: darkgreen;
+  border: 1px #333;
+  text-size-adjust: 25px;
 }
