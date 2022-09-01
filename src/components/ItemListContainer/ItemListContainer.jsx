@@ -4,11 +4,14 @@ import './ItemListContainer.scss'
 import { pedirDatos } from "../../helpers/pedirDatos"
 import ItemList from "../ItemList/ItemList"
 import MoonLoader from "react-spinners/MoonLoader";
+import {useParams} from 'react-router-dom';
 
 export default function ItemListContainer() {
 
   const [productos, setProductos] = useState([])
   const [loading, setLoading] = useState(true)
+
+  const { categoryId } = useParams()
 
     useEffect(() => {
         pedirDatos()
@@ -21,7 +24,7 @@ export default function ItemListContainer() {
                 console.log(error)
             })
             .finally(() => {
-                // console.log("Fin del proceso")
+                setLoading(false)
             })
     }, [])
   

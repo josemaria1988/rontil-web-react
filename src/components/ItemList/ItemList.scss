@@ -1,6 +1,7 @@
-.container  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 4fr);
+    grid-auto-rows: auto;
+    width: 100%;
+    margin: 50px;
 }

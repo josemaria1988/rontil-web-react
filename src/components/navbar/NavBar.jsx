@@ -3,16 +3,17 @@ import React from 'react'
 import './NavBar.scss'
 import logo from '../../assets/img/logo.png'
 import CartWidget from '../CartWidget/CartWidget.jsx'
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
     return (
     <header className="navHeader">
         <nav className="navBar">
-            <a href="#"><img src={logo} alt="logo" className="logo"></img></a>
+            <Link to='/'><img src={logo} alt="logo" className="logo"></img></Link>
             <ul className="ulNav">
-                <li className="nav-menu-item"><a href="#" className="nav-link">Inicio</a></li>
-                <li className="nav-menu-item"><a href="#" className="nav-link">Productos</a></li>
-                <li className="nav-menu-item"><a href="#" className="nav-link">Contacto</a></li>
+                <li className="nav-menu-item"><Link to="/" className="nav-link">Inicio</Link></li>
+                <li className="nav-menu-item"><Link to='/productos' className="nav-link">Productos</Link></li>
+                <li className="nav-menu-item"><Link to='contacto' className="nav-link">Contacto</Link></li>
             </ul>
             {/* Agregamos el CartWidget al nav */}
             <CartWidget/>
