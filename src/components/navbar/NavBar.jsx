@@ -13,7 +13,8 @@ const Navbar = () => {
             <ul className="ulNav">
                 <li className="nav-menu-item"><Link to="/" className="nav-link">Inicio</Link></li>
                 <li className="nav-menu-item"><Link to='/productos' className="nav-link">Productos</Link></li>
-                <li className="nav-menu-item"><Link to='contacto' className="nav-link">Contacto</Link></li>
+                <li className="nav-menu-item"><Link to='/nosotros' className="nav-link">Nosotros</Link></li>
+                <li className="nav-menu-item"><Link to='/contacto' className="nav-link">Contacto</Link></li>
             </ul>
             {/* Agregamos el CartWidget al nav */}
             <CartWidget/>

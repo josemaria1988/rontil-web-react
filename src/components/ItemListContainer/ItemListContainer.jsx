@@ -5,6 +5,7 @@ import { pedirDatos } from "../../helpers/pedirDatos"
 import ItemList from "../ItemList/ItemList"
 import MoonLoader from "react-spinners/MoonLoader";
 import {useParams} from 'react-router-dom';
+import Banner from '../Banner/Banner.jsx'
 
 export default function ItemListContainer() {
 
@@ -35,6 +36,7 @@ export default function ItemListContainer() {
     <div className="divCards">
       <h4 className="cardsTittle">Productos Destacados</h4>
 
+      <Banner/>
       <ItemList productos={productos}/>
 
     </div>

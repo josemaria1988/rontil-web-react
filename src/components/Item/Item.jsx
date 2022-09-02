@@ -25,8 +25,7 @@ const Item = ({ producto }) => {
                     <p>Precio: {producto.precio}</p>
                     <p>Stock disponible: {producto.stock}</p>
                     <p>{producto.desc}</p>
-                    <ItemCount precio={producto.precio} counter={counter} onAdd={onAdd} onDecrement={onDecrement}/>
-                    <button className="btn-card">Añadir al Carrito</button>
+                    <button className="btn-card">Ver en detalle</button>
                 </div>
             </div>
         </div>
