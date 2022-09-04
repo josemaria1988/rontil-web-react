@@ -5,6 +5,7 @@ import {useParams} from 'react-router-dom';
 import ItemDetail from "../ItemDetail/ItemDetail.jsx"
 import MoonLoader from "react-spinners/MoonLoader";
 import {Link} from 'react-router-dom';
+import RelatedItems from '../../components/RelatedItems/RelatedItems.jsx'
 
 const ItemDetailContainer = () => {
 
@@ -25,7 +26,7 @@ const ItemDetailContainer = () => {
         })
     // setear el estado con un único producto
 
-}, [])
+}, [itemId])
 
   
   return (
@@ -33,11 +34,11 @@ const ItemDetailContainer = () => {
     {loading ? <div className="spinner" ><MoonLoader/> </div>  
      : 
     <div className="divCards">
-      <h4 className="cardsTittle">Detalle de Producto</h4>
+      <h4 className="cardsTittle">Detalle de Producto </h4>
       <Link to='/' className="nav-link">Volver atrás</Link>
 
       <ItemDetail producto={producto}/>
-
+      <RelatedItems categoria={producto.tipo}/>
     </div>
   }
     </>
