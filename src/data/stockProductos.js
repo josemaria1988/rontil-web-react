@@ -8,8 +8,11 @@ let stockProductos = [{
   stock: 10,
   color:  ["black", "blue", "red", "yellow", "white"],
   img: ["https://http2.mlstatic.com/D_NQ_NP_798192-MLU44296538377_122020-O.webp",
+        'https://http2.mlstatic.com/D_NQ_NP_716531-MLU50289610937_062022-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_883628-MLU50452881879_062022-O.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_883628-MLU50452881879_062022-O.webp']
+        'https://http2.mlstatic.com/D_NQ_NP_749094-MLU49546975295_042022-O.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_737043-MLU31241617791_062019-O.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_979298-MLU31241612386_062019-O.webp']
 },
 {
   id: 2, 
@@ -71,7 +74,7 @@ let stockProductos = [{
   desc: 'Dispensador de Alcohol en Gel de Pie en Acero Inox',
   precio: 3200,
   stock: 10,
-  color: 'grey',
+  color: ['grey'],
   img: ['https://http2.mlstatic.com/D_NQ_NP_834217-MLU42940375409_072020-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_845845-MLU45494403058_042021-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_748421-MLU45494407110_042021-O.webp']
@@ -84,7 +87,7 @@ let stockProductos = [{
   desc: 'Rueda de 200 mm de diámetro para contenedores de basura de 120, 240 y 360 lts',
   precio: 400,
   stock: 10,
-  color: 'black',
+  color: ['black'],
   img: ['https://http2.mlstatic.com/D_NQ_NP_623408-MLU32806338451_112019-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_909100-MLU32806353699_112019-O.webp']
 },
@@ -96,7 +99,7 @@ let stockProductos = [{
   desc: 'Compostador Bulbeo de 360 Lts',
   precio: 6300,
   stock: 10,
-  color: 'green',
+  color: ['green'],
   img: ['https://http2.mlstatic.com/D_NQ_NP_720954-MLU31804494824_082019-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_685675-MLU31822278814_082019-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_795225-MLU31822278798_082019-O.webp',
@@ -110,7 +113,7 @@ let stockProductos = [{
   desc: 'Compostador Bulbeo de 700 Lts',
   precio: 10700,
   stock: 10,
-  color: 'green',
+  color: ['green'],
   img: ['https://http2.mlstatic.com/D_NQ_NP_694403-MLU32026782545_082019-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_709717-MLU32026773989_082019-O.webp',
         'https://http2.mlstatic.com/D_NQ_NP_966065-MLU32026784507_082019-O.webp',
@@ -136,7 +139,7 @@ let stockProductos = [{
   desc: 'Tapa para contenedor de basura de 120 Lts',
   precio: 650,
   stock: 10,
-  color: 'Azul',
+  color: ['blue'],
   img: ['https://http2.mlstatic.com/D_NQ_NP_697276-MLU30742949686_052019-O.webp']
 },
 {
@@ -185,7 +188,7 @@ let stockProductos = [{
   desc: 'Rueda de 200 mm para contenedores de 4 ruedas de 770 o 1100 lts',
   precio: 1100,
   stock: 10,
-  color: 'black',
+  color: ['black'],
   img: ['https://http2.mlstatic.com/D_NQ_NP_604593-MLU32814158273_112019-O.webp']
 }
 ];

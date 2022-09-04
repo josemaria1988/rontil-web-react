@@ -1,19 +1,15 @@
 
-import React, {useState} from "react";
+import React from "react";
 import './Item.scss'
-import ItemCount from '../ItemCount/ItemCount.jsx'
+import { useNavigate } from 'react-router-dom';
 
 
 const Item = ({ producto }) => {
 
-    const [counter, setCounter] = useState(1);
-
-    const onAdd = () => {
-        if(counter < producto.stock) setCounter(counter+1);
-    }
-
-    const onDecrement = () => {
-        if(counter > producto.cantidad) setCounter(counter-1);
+   
+    let navigate = useNavigate();
+    const handleNavigation = () => {
+        navigate(`./detail/${producto.id}`)
     }
 
     return (
@@ -25,7 +21,7 @@ const Item = ({ producto }) => {
                     <p>Precio: {producto.precio}</p>
                     <p>Stock disponible: {producto.stock}</p>
                     <p>{producto.desc}</p>
-                    <button className="btn-card">Ver en detalle</button>
+                    <button onClick={handleNavigation} className="btn-card">Ver en detalle</button>
                 </div>
             </div>
         </div>

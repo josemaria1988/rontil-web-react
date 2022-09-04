@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './ItemDetailContainer.scss'
 import { pedirDatos } from "../../helpers/pedirDatos"
+import {useParams} from 'react-router-dom';
 import ItemDetail from "../ItemDetail/ItemDetail.jsx"
 import MoonLoader from "react-spinners/MoonLoader";
 
@@ -8,21 +9,23 @@ const ItemDetailContainer = () => {
 
   const [producto, setProductos] = useState([])
   const [loading, setLoading] = useState(true)
+  const {itemId} = useParams()
 
-    useEffect(() => {
-        pedirDatos()
-            .then( (res) => {
-                setProductos(res)
-                setLoading(false)
-            })
-            .catch( (error) => {
-              setLoading(false)
-                console.log(error)
-            })
-            .finally(() => {
-                // console.log("Fin del proceso")
-            })
-    }, [])
+  useEffect(() => {
+    setLoading(true)
+
+    pedirDatos()
+        .then((res) => {
+            setProductos( res.find((prod) => prod.id === Number(itemId)) )
+        })
+        .catch(err => console.log(err))
+        .finally(() => {
+            setLoading(false)
+        })
+    // setear el estado con un único producto
+
+}, [])
+
   
   return (
   <>
