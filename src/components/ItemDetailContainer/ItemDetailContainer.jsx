@@ -4,6 +4,7 @@ import { pedirDatos } from "../../helpers/pedirDatos"
 import {useParams} from 'react-router-dom';
 import ItemDetail from "../ItemDetail/ItemDetail.jsx"
 import MoonLoader from "react-spinners/MoonLoader";
+import {Link} from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 
@@ -33,6 +34,7 @@ const ItemDetailContainer = () => {
      : 
     <div className="divCards">
       <h4 className="cardsTittle">Detalle de Producto</h4>
+      <Link to='/' className="nav-link">Volver atrás</Link>
 
       <ItemDetail producto={producto}/>
 
