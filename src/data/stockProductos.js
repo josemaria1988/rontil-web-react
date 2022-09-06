@@ -1,7 +1,7 @@
 let stockProductos = [{
   id: 1, 
   nombre: "Contenedor 120 Lts ", 
-  tipo: "Contenedores de 2 ruedas", 
+  tipo: "Contenedores", 
   cantidad: 1, 
   desc: "Contenedor SULO de 120 Lts", 
   precio: 3100,  
@@ -17,7 +17,7 @@ let stockProductos = [{
 {
   id: 2, 
   nombre: "Contenedor 240 Lts", 
-  tipo: "Contenedores de 2 ruedas", 
+  tipo: "Contenedores", 
   cantidad: 1, 
   desc: "Contenedor SULO de 240 Lts", 
   precio: 4200, 
@@ -30,7 +30,7 @@ let stockProductos = [{
 {
   id: 3, 
   nombre: "Contenedor de 360 Lts", 
-  tipo: "Contenedores de 2 ruedas", 
+  tipo: "Contenedores", 
   cantidad: 1, 
   desc: "Contenedor SULO de 360 Lts", 
   precio: 6300,  
@@ -43,7 +43,7 @@ let stockProductos = [{
 {
   id: 4, 
   nombre: "Contenedor 800 Lts", 
-  tipo: "Contenedores de 4 ruedas", 
+  tipo: "Contenedores", 
   cantidad: 1, 
   desc: "Contenedor SULO Citybac 800 Lts", 
   precio: 18800, 
@@ -56,7 +56,7 @@ let stockProductos = [{
 {
   id: 5,
   nombre: 'Contenedor de 1100 Lts',
-  tipo: 'Contenedores de 4 ruedas',
+  tipo: 'Contenedores',
   cantidad: 1,
   desc: 'Contenedor SULO Citybac 1100 Lts',
   precio: 20100,
@@ -69,7 +69,7 @@ let stockProductos = [{
 {
   id: 6,
   nombre: 'Dispensador Alcohol en Gel',
-  tipo: 'Dispensador',
+  tipo: 'Dispensadores',
   cantidad: 1,
   desc: 'Dispensador de Alcohol en Gel de Pie en Acero Inox',
   precio: 3200,
@@ -82,7 +82,7 @@ let stockProductos = [{
 {
   id: 7,
   nombre: 'Rueda Para Contenedor de Basura 120-240-360',
-  tipo: 'Repuesto',
+  tipo: 'Repuestos',
   cantidad: 1,
   desc: 'Rueda de 200 mm de diámetro para contenedores de basura de 120, 240 y 360 lts',
   precio: 400,
@@ -134,7 +134,7 @@ let stockProductos = [{
 {
   id: 11,
   nombre: 'Tapa Contenedor 120 Lts',
-  tipo: 'Repuesto',
+  tipo: 'Repuestos',
   cantidad: 1,
   desc: 'Tapa para contenedor de basura de 120 Lts',
   precio: 650,
@@ -145,7 +145,7 @@ let stockProductos = [{
 {
   id: 12,
   nombre: 'Papelera 40.5 Lts tapa basculante',
-  tipo: 'Papelera',
+  tipo: 'Papeleras',
   cantidad: 1,
   desc: 'Papelera en acero inoxidable, tapa plástica basculante, de 40,5 Lts',
   precio: 2920,
@@ -159,7 +159,7 @@ let stockProductos = [{
 {
   id: 13,
   nombre: 'Papelera Inox 6 Lts',
-  tipo: 'Papelera',
+  tipo: 'Papeleras',
   cantidad: 1,
   desc: 'Papelera en acero inox, 6 litros, con pedal',
   precio: 1128,
@@ -171,7 +171,7 @@ let stockProductos = [{
 {
   id: 14,
   nombre: 'Papelera Prima Linea 50 Lts',
-  tipo: 'Papelera',
+  tipo: 'Papeleras',
   cantidad: 1,
   desc: 'papelera Prima Línea 50 Lts en polietileno de alta densidad',
   precio: 7390,
@@ -183,7 +183,7 @@ let stockProductos = [{
 {
   id: 15,
   nombre: 'Rueda para Contenedor 770-1100 Lts',
-  tipo: 'Repuesto',
+  tipo: 'Repuestos',
   cantidad: 1,
   desc: 'Rueda de 200 mm para contenedores de 4 ruedas de 770 o 1100 lts',
   precio: 1100,
