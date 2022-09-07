@@ -6,13 +6,56 @@ let stockProductos = [{
   desc: "Contenedor SULO de 120 Lts", 
   precio: 3100,  
   stock: 10,
-  color:  ["black", "blue", "red", "yellow", "white"],
-  img: ["https://http2.mlstatic.com/D_NQ_NP_798192-MLU44296538377_122020-O.webp",
-        'https://http2.mlstatic.com/D_NQ_NP_716531-MLU50289610937_062022-O.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_883628-MLU50452881879_062022-O.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_749094-MLU49546975295_042022-O.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_737043-MLU31241617791_062019-O.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_979298-MLU31241612386_062019-O.webp']
+  color:[
+    {
+      value: 'black',
+      img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-gris.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+    },
+    {
+      value: 'green',
+      img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-verde.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+    },
+    {
+      value: 'brown',
+      img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-marron.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+    },
+    {
+      value: 'blue',
+      img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-azul.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+    },
+    {
+      value: 'white',
+      img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-blanco.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+    },
+    {
+      value: 'red',
+      img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-rojo.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+    },
+    {
+      value: 'yellow',
+      img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-amarillo.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+    },
+    {
+      value: 'orange',
+      img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-naranja.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
+            'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+    }
+  ]
 },
 {
   id: 2, 

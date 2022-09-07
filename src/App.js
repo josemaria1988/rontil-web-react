@@ -8,11 +8,13 @@ import Nosotros from './components/Nosotros/Nosotros.jsx'
 import Footer from './components/Footer/Footer.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+
 function App() {
   
   return (
 
       <BrowserRouter>
+      
           <Navbar/>
         <Routes>
 
@@ -24,8 +26,6 @@ function App() {
           <Route path='/cart' element={<Cart/>} />
                   
         </Routes>
-        
-          
         
           <Footer /> 
       </BrowserRouter>

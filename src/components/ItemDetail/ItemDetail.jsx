@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 const ItemDetail = ({ producto }) => {
 
     const [counter, setCounter] = useState(1);
-    const [prodBuyed, setProdBuyed] = useState([])
     let [imgIndex, setIndex] = useState(0);
     
     const onAdd = () => {
@@ -33,7 +32,6 @@ const ItemDetail = ({ producto }) => {
             precio: producto.precio,
             img: producto.img
         }
-        setProdBuyed(itemToCart)
         toast('Agregado al carrito!', {
             position: "top-right",
             autoClose: 1000,
@@ -49,7 +47,7 @@ const ItemDetail = ({ producto }) => {
 
     let navigate = useNavigate();
     const handleNavigationCart = () => {
-        navigate(`/cart/${prodBuyed}`)
+        navigate(`/cart`)
     }
 
     return (
@@ -79,7 +77,7 @@ const ItemDetail = ({ producto }) => {
                 <p>Stock disponible: {producto.stock}</p>
                 <div className="thumb">
                     {
-                        producto.img.map((img, index) => (
+                        producto.color.img.map((img, index) => (
                             <img key={index} src={img} alt="" onClick={() => handleImage(index)} />
                         ))
                     }
