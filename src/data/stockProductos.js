@@ -57,7 +57,7 @@ let stockProductos = [{
     }
   ]
 },
-{
+/* {
   id: 2, 
   nombre: "Contenedor 240 Lts", 
   tipo: "Contenedores", 
@@ -233,7 +233,7 @@ let stockProductos = [{
   stock: 10,
   color: ['black'],
   img: ['https://http2.mlstatic.com/D_NQ_NP_604593-MLU32814158273_112019-O.webp']
-}
+} */
 ];
 
 export default stockProductos

@@ -54,7 +54,7 @@ const ItemDetail = ({ producto }) => {
 
         <div className="details">
             <div className="big-img">
-                <img src={producto.img[imgIndex]} key={producto.img.index} alt="" />
+                <img src={producto.color[imgIndex].img} key={producto.color.index} alt="" />
             </div>
             <div className="box">
                 <div className="row">
