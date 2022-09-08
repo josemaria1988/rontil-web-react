@@ -36,7 +36,7 @@ const RelatedItems = ({categoria}) => {
         {
             producto.map((prod, index) => <div className="related" key={index}>
                 <h4 className="relatedTitle">{prod.nombre}</h4>
-                <img onClick={() => handleNavigation(prod.id)} className="imgRelated" src={prod.img} alt=""/>
+                <img onClick={() => handleNavigation(prod.id)} className="imgRelated" src={prod.color[0].img[0]} alt=""/>
             </div>)
         }
         

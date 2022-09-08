@@ -11,6 +11,7 @@ const ItemDetail = ({ producto }) => {
 
     const [counter, setCounter] = useState(1);
     let [imgIndex, setIndex] = useState(0);
+    let [colorIndex, setColor] = useState(0);
     
     const onAdd = () => {
         if (counter < producto.stock) setCounter(counter + 1);
@@ -20,7 +21,10 @@ const ItemDetail = ({ producto }) => {
     }
 
     const handleImage = (index) => {
-        setIndex(imgIndex = index)
+        setIndex(index)
+    }
+    const handleColor = (index) => {
+        setColor(index)
     }
 
     const addToCart = () => {
@@ -54,17 +58,18 @@ const ItemDetail = ({ producto }) => {
 
         <div className="details">
             <div className="big-img">
-                <img src={producto.color[imgIndex].img} key={producto.color.index} alt="" />
+                <img src={producto.color[colorIndex].img[imgIndex]} key={producto.color[colorIndex].img[imgIndex]} alt="" />
             </div>
             <div className="box">
                 <div className="row">
                     <h2>{producto.nombre}</h2>
-                    <h3>$ {producto.precio}</h3>
+                    <h3>Precio por unidad <hr/>$ {producto.precio}</h3>
                 </div>
                 <div className="colors">
-                    <div>Colores disponibles</div>
+                    <p>Colores disponibles...</p>
+                    <p>Hace click en el color para elegirlo:</p>
                     {producto.color.map((color, index) => (
-                        <button key={index} style={{ background: color }}></button>
+                        <button key={index} style={{ background: color.value }} onClick={() => handleColor(index)}></button>
                     ))}
                 </div>
                 <p>{producto.desc}</p>
@@ -74,10 +79,10 @@ const ItemDetail = ({ producto }) => {
                     <button className="btn-comprar" onClick={addToCart}>Añadir al Carrito</button>
                     <button onClick={handleNavigationCart} className="btn-card">Finalizar Compra</button>
                 </div>
-                <p>Stock disponible: {producto.stock}</p>
+                <p>Stock disponible: {producto.color[colorIndex].stock}</p>
                 <div className="thumb">
                     {
-                        producto.color.img.map((img, index) => (
+                        producto.color[colorIndex].img.map((img, index) => (
                             <img key={index} src={img} alt="" onClick={() => handleImage(index)} />
                         ))
                     }
