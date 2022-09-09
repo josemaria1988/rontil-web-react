@@ -1,22 +1,27 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
+import { useCartContext } from '../../Context/CartContext';
+
 
 const Cart = () => {
 
-    const itemToCart = useParams()
-    console.log(itemToCart)
+    const { cart } = useCartContext()
 
     return(
         <div>
             <div className="container">
-            <div className="card">
-                <img src={itemToCart.img} alt="producto.img" />
-                <div className="contenido-card">
-                    <h4 className="titulo-card">{itemToCart.nombre}</h4>
-                    <p>Precio: {itemToCart.precio}</p>
-                    
+                {cart.map((prod, index) => <div key={index} className="card">
+                    <img src={prod.img} alt="producto.img" />
+                    <div className="contenido-card">
+                        <h4 className="titulo-card">{prod.nombre}</h4>
+                        <p>Precio: {prod.precio}</p>
+                        
+                    </div>
                 </div>
-            </div>
+
+                
+                )
+                }
         </div>
         </div>
     )

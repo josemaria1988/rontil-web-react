@@ -5,36 +5,38 @@ import ItemCount from '../ItemCount/ItemCount.jsx'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import { useCartContext } from "../../Context/CartContext";
 
 
 const ItemDetail = ({ producto }) => {
+    const { cart, addToCart, isInCart} = useCartContext()
 
     const [counter, setCounter] = useState(1);
-    let [imgIndex, setIndex] = useState(0);
+    let [imgIndex, setImage] = useState(0);
     let [colorIndex, setColor] = useState(0);
     
     const onAdd = () => {
-        if (counter < producto.stock) setCounter(counter + 1);
+        if (counter < producto.color[colorIndex].stock) setCounter(counter + 1);
     }
     const onDecrement = () => {
         if (counter > producto.cantidad) setCounter(counter - 1);
     }
 
     const handleImage = (index) => {
-        setIndex(index)
+        setImage(index)
     }
     const handleColor = (index) => {
         setColor(index)
     }
 
-    const addToCart = () => {
+    const handleAgregar = () => {
         
         const itemToCart = {
-            id: producto.id,
+            id: producto.color[colorIndex].id,
             nombre: producto.nombre,
             cantidad: counter,
-            precio: producto.precio,
-            img: producto.img
+            precio: producto.color[colorIndex].precio,
+            img: producto.color[colorIndex].img
         }
         toast('Agregado al carrito!', {
             position: "top-right",
@@ -45,14 +47,17 @@ const ItemDetail = ({ producto }) => {
             draggable: true,
             progress: undefined,
         });
-        console.log(itemToCart)
 
+        addToCart(itemToCart);
+      
     }
 
     let navigate = useNavigate();
     const handleNavigationCart = () => {
         navigate(`/cart`)
     }
+
+    console.log(cart)
 
     return (
 
@@ -63,21 +68,22 @@ const ItemDetail = ({ producto }) => {
             <div className="box">
                 <div className="row">
                     <h2>{producto.nombre}</h2>
-                    <h3>Precio por unidad <hr/>$ {producto.precio}</h3>
+                    <h3>Precio por unidad <hr/>$ {producto.color[colorIndex].precio}</h3>
                 </div>
                 <div className="colors">
                     <p>Colores disponibles...</p>
                     <p>Hace click en el color para elegirlo:</p>
                     {producto.color.map((color, index) => (
                         <button key={index} style={{ background: color.value }} onClick={() => handleColor(index)}></button>
-                    ))}
+                        ))}
                 </div>
+                        <button className="btn-comprar" onClick={handleNavigationCart}>Ir al Carrito</button>
                 <p>{producto.desc}</p>
 
                 <div className="carrito-count">
-                    <ItemCount precio={producto.precio} counter={counter} onAdd={onAdd} onDecrement={onDecrement} />
-                    <button className="btn-comprar" onClick={addToCart}>Añadir al Carrito</button>
-                    <button onClick={handleNavigationCart} className="btn-card">Finalizar Compra</button>
+                    <ItemCount precio={producto.color[colorIndex].precio} counter={counter} onAdd={onAdd} onDecrement={onDecrement} />
+                    <button className="btn-comprar" onClick={handleAgregar}>Añadir al Carrito</button>
+                    
                 </div>
                 <p>Stock disponible: {producto.color[colorIndex].stock}</p>
                 <div className="thumb">
@@ -86,6 +92,7 @@ const ItemDetail = ({ producto }) => {
                             <img key={index} src={img} alt="" onClick={() => handleImage(index)} />
                         ))
                     }
+                    
                 </div>
 
 

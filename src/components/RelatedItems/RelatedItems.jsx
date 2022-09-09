@@ -19,7 +19,6 @@ const RelatedItems = ({categoria}) => {
             
         })
     }, [categoria])
-    console.log(producto)
 
     let navigate = useNavigate();
     const handleNavigation = (prodId) => {

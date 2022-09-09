@@ -7,11 +7,14 @@ import Contacto from './components/Contacto/Contacto.jsx'
 import Nosotros from './components/Nosotros/Nosotros.jsx'
 import Footer from './components/Footer/Footer.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './Context/CartContext';
 
 
 function App() {
   
   return (
+
+    <CartProvider>
 
       <BrowserRouter>
       
@@ -29,6 +32,7 @@ function App() {
         
           <Footer /> 
       </BrowserRouter>
+    </CartProvider>
   );
 }
 
