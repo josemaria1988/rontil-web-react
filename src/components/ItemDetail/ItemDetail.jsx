@@ -36,7 +36,7 @@ const ItemDetail = ({ producto }) => {
             nombre: producto.nombre,
             cantidad: counter,
             precio: producto.color[colorIndex].precio,
-            img: producto.color[colorIndex].img
+            img: producto.color[colorIndex].img[imgIndex]
         }
         toast('Agregado al carrito!', {
             position: "top-right",
@@ -49,15 +49,14 @@ const ItemDetail = ({ producto }) => {
         });
 
         addToCart(itemToCart);
-      
+        console.log(itemToCart)
+        console.log(cart)
     }
 
     let navigate = useNavigate();
     const handleNavigationCart = () => {
         navigate(`/cart`)
     }
-
-    console.log(cart)
 
     return (
 
