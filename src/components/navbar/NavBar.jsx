@@ -39,7 +39,6 @@ const Navbar = () => {
                 <div className={`nav-toggle ${openMenu && "open"}`} onClick={() => setOpenMenu(openMenu)}>
                     <div className="nav-btn"><MenuIcon /></div>
                 </div>
-                {/* Agregamos el CartWidget al nav */}
             </nav>
 
         </header>

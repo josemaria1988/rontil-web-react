@@ -11,7 +11,14 @@ export const CartProvider = ({children}) => {
 
 
     const addToCart = (item) => {
-        (cart.some((prod) => prod.id === item.id)) ? item.cantidad++ : setCart([...cart, item])
+        if(!isInCart(item.id)) {
+            setCart([...cart, item])
+        }else {
+            let itemRepetido = cart.find(prod => prod.id === item.id)
+            itemRepetido.cantidad += item.cantidad
+            const newCart = cart.filter(prod => prod.id !== item.id)
+            setCart([...newCart, itemRepetido])
+        }
     }
 
     const removeItem = (id) => {
@@ -56,3 +63,4 @@ export const CartProvider = ({children}) => {
 export const useCartContext = () => {
     return useContext(CartContext)
 }
+
