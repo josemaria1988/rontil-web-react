@@ -9,7 +9,7 @@ import { useCartContext } from "../../Context/CartContext";
 
 
 const ItemDetail = ({ producto }) => {
-    const { cart, addToCart, isInCart} = useCartContext()
+    const {addToCart} = useCartContext()
 
     const [counter, setCounter] = useState(1);
     let [imgIndex, setImage] = useState(0);

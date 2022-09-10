@@ -1,11 +1,32 @@
 import React from 'react';
 import { useCartContext } from '../../Context/CartContext';
 import './Cart.scss'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import DoneIcon from '@mui/icons-material/Done';
 
 
 const Cart = () => {
 
     const { cart, cartTotal, emptyCart, removeItem } = useCartContext();
+
+    const handleFinalizar = () => {
+        const MySwal = withReactContent(Swal)
+
+        MySwal.fire({
+            title: <p>Procesando pago</p>,
+            didOpen: () => {
+                MySwal.showLoading()
+            },
+        }).then(() => {
+            return MySwal.fire(
+                
+            <p>Compra realizada con éxito! <DoneIcon/></p>,
+            emptyCart()
+            )
+        })
+    }
+
 
     return (
         <div className="cart-container">
@@ -26,7 +47,7 @@ const Cart = () => {
                 <span className="total-carrito">
                     Total: $ {cartTotal()}
                 </span>
-                <button className="btn-finalizar-compra">FINALIZAR COMPRA</button>
+                <button onClick={handleFinalizar} className="btn-finalizar-compra">FINALIZAR COMPRA</button>
                 <button onClick={emptyCart} className="btn-borrar-todo">BORRAR TODO</button>
             </div>
         </div>
