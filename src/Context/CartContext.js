@@ -1,36 +1,61 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 export const CartContext = createContext()
 
 
 const init = JSON.parse(localStorage.getItem('carrito')) || []
 
-export const CartProvider = ({children}) => {
+export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState(init)
 
 
     const addToCart = (item) => {
-        if(!isInCart(item.id)) {
+        if (!isInCart(item.id)) {
             setCart([...cart, item])
-        }else {
+        } else {
             let itemRepetido = cart.find(prod => prod.id === item.id)
-            itemRepetido.cantidad += item.cantidad
+            itemRepetido.cantidad + item.cantidad > item.stock ? getStock(item) : itemRepetido.cantidad += item.cantidad
             const newCart = cart.filter(prod => prod.id !== item.id)
             setCart([...newCart, itemRepetido])
+
         }
     }
 
+    const getStock = (item) => {
+        item.cantidad = item.stock
+        setCart([...cart, item])
+        const MySwal = withReactContent(Swal)
+        MySwal.fire({
+            title: <p>Un momento...</p>,
+            timer: 1500,
+            didOpen: () => {
+                MySwal.showLoading()
+            },
+        }).then(() => {
+            return MySwal.fire(
+                
+                <p>Tu solicitud excede el stock disponible para este producto <ErrorOutlineIcon /></p>,
+                emptyCart()
+                )
+            })
+
+    }
+
+
     const removeItem = (id) => {
-        setCart( cart.filter((item) => item.id !== id) )
+        setCart(cart.filter((item) => item.id !== id))
     }
-  
+
     const isInCart = (id) => {
-      return cart.some((item) => item.id === id)
+        return cart.some((item) => item.id === id)
     }
-  
+
     const cartQuantity = () => {
-      return cart.reduce((acc, item) => acc + item.cantidad, 0)
+        return cart.reduce((acc, item) => acc + item.cantidad, 0)
     }
 
     const cartTotal = () => {
@@ -54,7 +79,7 @@ export const CartProvider = ({children}) => {
             cartTotal,
             emptyCart,
             removeItem
-          }}>
+        }}>
             {children}
         </CartContext.Provider>
     )

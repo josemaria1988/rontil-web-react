@@ -35,6 +35,7 @@ const ItemDetail = ({ producto }) => {
             id: producto.color[colorIndex].id,
             nombre: producto.nombre,
             cantidad: counter,
+            stock: producto.color[colorIndex].stock,
             precio: producto.color[colorIndex].precio,
             img: producto.color[colorIndex].img[0]
         }
@@ -47,6 +48,7 @@ const ItemDetail = ({ producto }) => {
             draggable: true,
             progress: undefined,
         });
+        
         addToCart(itemToCart)
     }
 

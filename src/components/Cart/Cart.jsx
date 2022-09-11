@@ -11,20 +11,23 @@ const Cart = () => {
     const { cart, cartTotal, emptyCart, removeItem } = useCartContext();
 
     const handleFinalizar = () => {
+        
         const MySwal = withReactContent(Swal)
-
-        MySwal.fire({
-            title: <p>Procesando pago</p>,
-            didOpen: () => {
-                MySwal.showLoading()
-            },
-        }).then(() => {
-            return MySwal.fire(
-                
-            <p>Compra realizada con éxito! <DoneIcon/></p>,
-            emptyCart()
-            )
-        })
+        if(cart.length !== 0){
+            return MySwal.fire({
+                title: <p>Procesando pago</p>,
+                timer: 1500,
+                didOpen: () => {
+                    MySwal.showLoading()
+                },
+            }).then(() => {
+                return MySwal.fire(
+                    
+                <p>Compra realizada con éxito! <DoneIcon/></p>,
+                emptyCart()
+                )
+            })
+        }
     }
 
 
