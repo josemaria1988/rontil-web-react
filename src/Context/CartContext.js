@@ -18,7 +18,7 @@ export const CartProvider = ({ children }) => {
             setCart([...cart, item])
         } else {
             let itemRepetido = cart.find(prod => prod.id === item.id)
-            itemRepetido.cantidad + item.cantidad > item.stock ? getStock(item) : itemRepetido.cantidad += item.cantidad
+            itemRepetido.cantidad + item.cantidad > item.stock ? (itemRepetido.cantidad = item.stock) && getStock(item) : itemRepetido.cantidad += item.cantidad
             const newCart = cart.filter(prod => prod.id !== item.id)
             setCart([...newCart, itemRepetido])
 
@@ -26,8 +26,6 @@ export const CartProvider = ({ children }) => {
     }
 
     const getStock = (item) => {
-        item.cantidad = item.stock
-        setCart([...cart, item])
         const MySwal = withReactContent(Swal)
         MySwal.fire({
             title: <p>Un momento...</p>,
@@ -38,8 +36,8 @@ export const CartProvider = ({ children }) => {
         }).then(() => {
             return MySwal.fire(
                 
-                <p>Tu solicitud excede el stock disponible para este producto <ErrorOutlineIcon /></p>,
-                emptyCart()
+                <p>Tu solicitud de {item.nombre} excede el stock disponible. Hemos ajustado su cantidad a {item.stock} unidades. <ErrorOutlineIcon /></p>,
+              
                 )
             })
 
