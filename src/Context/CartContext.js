@@ -29,18 +29,12 @@ export const CartProvider = ({ children }) => {
         const MySwal = withReactContent(Swal)
         MySwal.fire({
             title: <p>Un momento...</p>,
-            timer: 1500,
+            timer: 500,
             didOpen: () => {
                 MySwal.showLoading()
             },
         }).then(() => {
-            return MySwal.fire(
-                
-                <p>Tu solicitud de {item.nombre} excede el stock disponible. Hemos ajustado su cantidad a {item.stock} unidades. <ErrorOutlineIcon /></p>,
-              
-                )
-            })
-
+            return MySwal.fire(<p>Tu solicitud de {item.nombre} excede el stock disponible. Hemos ajustado su cantidad a {item.stock} unidades. <ErrorOutlineIcon /></p>,)})
     }
 
 
