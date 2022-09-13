@@ -105,3 +105,17 @@
 .carrito-count {
     display: flex;
 }
+
+.btn-terminar-compra {
+    background: darkgreen;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 15px 25px;
+    margin-top: 15px;
+    transition: all 400ms ease;
+}
+.btn-terminar-compra:hover {
+    background: green   
+}

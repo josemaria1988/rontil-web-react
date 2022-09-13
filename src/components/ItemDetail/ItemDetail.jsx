@@ -9,7 +9,7 @@ import { useCartContext } from "../../Context/CartContext";
 
 
 const ItemDetail = ({ producto }) => {
-    const {addToCart} = useCartContext()
+    const {addToCart, cart} = useCartContext()
 
     const [counter, setCounter] = useState(1);
     let [imgIndex, setImage] = useState(0);
@@ -75,12 +75,14 @@ const ItemDetail = ({ producto }) => {
                         <button key={index} style={{ background: color.value }} onClick={() => handleColor(index)}></button>
                         ))}
                 </div>
-                        <button className="btn-comprar" onClick={handleNavigationCart}>Ir al Carrito</button>
                 <p>{producto.desc}</p>
 
                 <div className="carrito-count">
                     <ItemCount precio={producto.color[colorIndex].precio} counter={counter} onAdd={onAdd} onDecrement={onDecrement} />
                     <button className="btn-comprar" onClick={handleAgregar}>Añadir al Carrito</button>
+                        {
+                            cart.length === 0 ? "" : <button className="btn-terminar-compra" onClick={handleNavigationCart}>Ir al Carrito</button>
+                        }
                     
                 </div>
                 <p>Stock disponible: {producto.color[colorIndex].stock}</p>

@@ -5,13 +5,16 @@ import { useCartContext } from '../../Context/CartContext';
 
 export default function IconButtons() {
 
-  const {cartQuantity} = useCartContext()
+  const {cartQuantity, cart} = useCartContext()
 
   return (
   
       <IconButton color="primary" aria-label="shopping cart">
         <ShoppingCartIcon />
-        <span>{cartQuantity()}</span>
+        {
+          cart.length === 0 ? "" : <span>{cartQuantity()}</span>
+
+        }
       </IconButton>
   
   );
