@@ -1,12 +1,8 @@
-.container-detail {
-    max-width: 1200px;
-    width: 100%;
-    margin: 100px auto;
-    box-shadow: 0 0 5px #ccc;
-}
 .details {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
     flex-wrap: wrap;
     padding: 30px;
 }
@@ -89,6 +85,7 @@
 }
 
 .box .btn-comprar {
+    width: 100%;
     background: #333;
     color: white;
     outline: none;
@@ -107,6 +104,8 @@
 }
 
 .btn-terminar-compra {
+    width: 100%;
+    margin-left: 15px;
     background: darkgreen;
     color: white;
     outline: none;

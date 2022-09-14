@@ -6,11 +6,12 @@ import CartWidget from '../CartWidget/CartWidget.jsx'
 import { Link } from 'react-router-dom';
 import { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
+import { useLoginContext } from '../../Context/LoginContext'
 
 const Navbar = () => {
 
     const [openMenu, setOpenMenu] = useState(false);
-
+    const {user, logout} = useLoginContext()
     return (
         <header className="navHeader">
             <nav className="navBar">
@@ -35,6 +36,10 @@ const Navbar = () => {
                     <li className="nav-menu-item"><Link to='/nosotros' className="nav-link">Nosotros</Link></li>
                     <li className="nav-menu-item"><Link to='/contacto' className="nav-link">Contacto</Link></li>
                     <li className="nav-menu-item"><Link to='/cart'> <CartWidget /> </Link></li>
+
+                    {
+                        user ? <li className="nav-menu-item"><Link to="/usuario" className="nav-link">{user.user}</Link><button onClick={logout}>Logout</button></li> : ""
+                    }
                 </ul>
                 <div className={`nav-toggle ${openMenu && "open"}`} onClick={() => setOpenMenu(openMenu)}>
                     <div className="nav-btn"><MenuIcon /></div>

@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import ItemList from "../ItemList/ItemList";
 import MoonLoader from "react-spinners/MoonLoader";
 import Banner from '../Banner/Banner.jsx';
+import '../Spinners/MoonLoader.scss';
 
 export default function ItemListContainer() {
 

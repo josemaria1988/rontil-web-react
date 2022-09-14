@@ -1,15 +1,19 @@
 .relatedFather {
     display: flex;
-    margin-top: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px;
+
 }
 
 .related {
-    display: flex;
-    flex-direction: column;
+    max-width: 100px;
+    margin-left: 50px;
 }
 
 .imgRelated {
-    width: 25%;
+    width: 100%;
+    object-fit:cover;
     cursor: pointer;
 }
 

@@ -4,8 +4,9 @@ import { pedirDatos } from "../../helpers/pedirDatos"
 import {useParams} from 'react-router-dom';
 import ItemDetail from "../ItemDetail/ItemDetail.jsx"
 import MoonLoader from "react-spinners/MoonLoader";
-import {Link} from 'react-router-dom';
 import RelatedItems from '../../components/RelatedItems/RelatedItems.jsx'
+import {Link} from 'react-router-dom'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const ItemDetailContainer = () => {
 
@@ -24,24 +25,25 @@ const ItemDetailContainer = () => {
         .finally(() => {
             setLoading(false)
         })
-    // setear el estado con un único producto
 
 }, [itemId])
 
   
   return (
-  <>
+  <div className="item-detail-container-div">
     {loading ? <div className="spinner" ><MoonLoader/> </div>  
      : 
     <div className="divCards">
-      <h4 className="cardsTittle">Detalle de Producto </h4>
-      <Link to='/' className="nav-link">Volver atrás</Link>
+      <div className="tittle-width-back-link">
+      <Link to='/' className="nav-link back-link"><ArrowBackIcon/>Volver Atras</Link>
+      <h4 className="cardsTittle">Detalle de Producto</h4>
+      </div>
 
       <ItemDetail producto={producto}/>
       <RelatedItems categoria={producto.tipo}/>
     </div>
   }
-    </>
+    </div>
   );
 }
 

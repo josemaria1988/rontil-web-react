@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCartContext } from "../../Context/CartContext";
 
 
+
 const ItemDetail = ({ producto }) => {
     const {addToCart, cart} = useCartContext()
 
@@ -60,13 +61,16 @@ const ItemDetail = ({ producto }) => {
     return (
 
         <div className="details">
+            
             <div className="big-img">
                 <img src={producto.color[colorIndex].img[imgIndex]} key={producto.color[colorIndex].img[imgIndex]} alt="" />
             </div>
             <div className="box">
                 <div className="row">
+               
                     <h2>{producto.nombre}</h2>
                     <h3>Precio por unidad <hr/>$ {producto.color[colorIndex].precio}</h3>
+                    
                 </div>
                 <div className="colors">
                     <p>Colores disponibles...</p>
