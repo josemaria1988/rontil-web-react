@@ -440,7 +440,7 @@ let stockProductos = [{
 },
 {
   id: 7,
-  nombre: 'Rueda Para Contenedor de Basura 120-240-360',
+  nombre: 'Rueda Para Contenedor 120-240-360',
   tipo: 'Repuestos',
   cantidad: 1,
   desc: 'Rueda de 200 mm de diámetro para contenedores de basura de 120, 240 y 360 lts',

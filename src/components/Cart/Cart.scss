@@ -1,62 +1,144 @@
-.cart-container {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- }
-
- .cart-item {
-    display: flex;
-    padding: 15px;
-    justify-content: center;
-    margin-left: 50px;
- }
-
- .cart-desc {
+body {
    display: flex;
-   padding: 10px;
- }
-
- .cart-producto-detail {
-   padding: 15px;
-   
- }
-
- .cart-img {
-    max-width: 100%;
-    max-height: 100px;
-    object-fit: fill;
-    cursor: pointer;
-}
-
-.cart-finish-box {
-   display: flex;
-   max-height: 100px;
    justify-content: center;
+   align-items: center;
 }
 
-.btn-borrar-unidad {
-   position: relative;
-   margin-left: -50px;
-   margin-bottom: 15px;
-   left: 50%;
-   width: 80px;
-   bottom: 0px;
+.cart-container {
+   margin-top: 100px;
+   height: 85%;
+   margin-top: 150px;
+   margin-bottom: 150px;
+   background-color: whitesmoke;
+   border-radius: 20px;
+   box-shadow: 0px 25px 40px grey
+}
+
+.carrito-vacio-div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.cart-header-div {
+   margin: auto;
+   width: 90%;
+   height: 15%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.cart-header {
+   font-size: 24px;
+   font-weight: 700;
+   color: brown;
+}
+
+.cart-item {
+   margin: auto;
+   width: 90%;
+   height: 30%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: 35px;
+}
+
+.img-box {
+   width: 15%;
+   text-align: center;
+   margin-right: 25px;
+}
+
+.cart-img {
+   height: 120px;
+}
+
+.cart-product-text-box {
+   height: 100%;
+   min-width: 500px;
+}
+
+.cart-product-name {
+   padding-top: 5px;
+   line-height: 25px;
+   font-size: 24px;
+   font-family: ‘Open Sans’;
+   font-weight: 800;
+   color: #202020;
    padding: 10px;
-   margin-top: 10px;
-   color: red;
-   border: 1px solid red;
+}
+
+.cart-product-detail {
+   line-height: 10px;
+   font-size: 18px;
+   font-family: ‘Open Sans’;
+   font-weight: 600;
+   color: #909090;
+   padding: 10px;
+}
+
+.cart-finish-box{
+   float: right;
+   margin-right: 5%;
+   width: 30%;
+  }
+
+  .total-carrito{
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   font-size: 24px;
+   color: #034574;
+   margin-bottom: 5px;
+  }
+
+  .btn-finalizar-compra{
+   padding-top: 5px;
+   font-size: 14px;
+   font-family: ‘Open Sans’;
+   font-weight: 600;
+   color: #1687d9;
+   cursor: pointer;
+  }
+
+  .btn-borrar-todo{
+   padding-top: 5px;
+   font-size: 14px;
+   font-family: ‘Open Sans’;
+   font-weight: 600;
+   color: #E44C4C;
+   cursor: pointer;
+  }
+
+  hr{
+   width: 66%;
+   float: right;
+   margin-right: 5%;
+  }
+
+  .btn-finalizar-compra {
+   display: flex;
+   align-items: center;
+   margin-left: 15px;
+   width: 200px;
+   padding: 10px;
+   color: #034574;
+   border: 1px solid #034574;
    border-radius: 4px;
    transition: all 400ms ease;
+   text-decoration: none;
 }
-.btn-borrar-unidad:hover  {
-   background: red;
+.btn-finalizar-compra:hover {
+   background: #034574;
    color: #fff;
    cursor: pointer;
 }
 
 .btn-borrar-todo {
+   display: flex;
+   align-items: center;
    margin-left: 15px;
    width: 100px;
    padding: 10px;
@@ -65,29 +147,24 @@
    border-radius: 4px;
    transition: all 400ms ease;
 }
-.btn-borrar-todo:hover  {
+
+.btn-borrar-todo:hover {
    background: red;
    color: #fff;
    cursor: pointer;
 }
 
-.btn-finalizar-compra {
-      margin-left: 15px;
-      width: 200px;
-      padding: 10px;
-      color: #034574;
-      border: 1px solid #034574;
-      border-radius: 4px;
-      transition: all 400ms ease;
-      text-decoration: none;
-   }
-   .btn-finalizar-compra:hover  {
-      background: #034574;
-      color: #fff;
-      cursor: pointer;
-   }
+.btn-borrar-unidad {
+   padding: 10px;
+   margin-top: 10px;
+   color: red;
+   border: 1px solid red;
+   border-radius: 4px;
+   transition: all 400ms ease;
+}
 
-   .total-carrito {
-      font-size: 25px;
-      color: darkgreen;
-   }
+.btn-borrar-unidad:hover {
+   background: red;
+   color: #fff;
+   cursor: pointer;
+}
