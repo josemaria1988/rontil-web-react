@@ -41,13 +41,13 @@ const Cart = () => {
             {
                 cart.length === 0 ?
                     <div className="carrito-vacio-div">
-                        <h2>Está Vacío...</h2>
+                        <h2>Tu Carrito Está Vacío...</h2>
                         <Link className="btn-finalizar-compra" to="/">Ver Productos</Link>
                     </div>
                     :
                     <>
                     <div className="cart-header-div">
-                <h3 class="cart-header">Tu Carrito</h3>
+                <h3 className="cart-header">Tu Carrito</h3>
            
                          <button onClick={emptyCart} className="btn-borrar-todo">BORRAR TODO</button>
             </div>

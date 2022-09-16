@@ -1,12 +1,13 @@
 
 import React, {useState, useEffect} from 'react';
 import './ItemListContainer.scss';
-import { pedirDatos } from "../../helpers/pedirDatos";
 import { useParams } from 'react-router-dom';
 import ItemList from "../ItemList/ItemList";
 import MoonLoader from "react-spinners/MoonLoader";
 import Banner from '../Banner/Banner.jsx';
 import '../Spinners/MoonLoader.scss';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../Firebase/config'
 
 export default function ItemListContainer() {
 
@@ -15,21 +16,18 @@ export default function ItemListContainer() {
   const {categoryId} = useParams()
 
     useEffect(() => {
-        pedirDatos()
-        .then( (res) => {
-          if (!categoryId) {
-            setProductos(res)
-          } else {
-            setProductos( res.filter((prod) => prod.tipo === categoryId) )
-          }
-      })
-            .catch( (error) => {
-              setLoading(false)
-                console.log(error)
-            })
-            .finally(() => {
-                setLoading(false)
-            })
+        setLoading(true)
+        //Armado de referencia a firebase
+        const productosRef = collection(db, 'productos')
+        //Consumir referencia
+        getDocs(productosRef)
+          .then((resp) => {
+            const dataProductos = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+            setProductos(dataProductos)
+          })
+          .finally(() => {
+            setLoading(false)
+          })
     }, [categoryId])
   
   return (

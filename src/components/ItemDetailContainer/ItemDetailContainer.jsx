@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import './ItemDetailContainer.scss'
-import { pedirDatos } from "../../helpers/pedirDatos"
 import {useParams} from 'react-router-dom';
 import ItemDetail from "../ItemDetail/ItemDetail.jsx"
 import MoonLoader from "react-spinners/MoonLoader";
 import RelatedItems from '../../components/RelatedItems/RelatedItems.jsx'
 import {Link} from 'react-router-dom'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '../../Firebase/config.js'
 
 const ItemDetailContainer = () => {
 
@@ -16,15 +17,14 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     setLoading(true)
-
-    pedirDatos()
-        .then((res) => {
-            setProductos( res.find((prod) => prod.id === Number(itemId)) )
-        })
-        .catch(err => console.log(err))
-        .finally(() => {
-            setLoading(false)
-        })
+    const itemRef = doc(db, 'productos', itemId) 
+    getDoc(itemRef)
+      .then((resp) => {
+        setProductos({id: resp.id, ...resp.data() })
+      })
+      .finally(() => {
+        setLoading(false)
+      })
 
 }, [itemId])
 

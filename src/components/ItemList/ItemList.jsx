@@ -7,7 +7,7 @@ const ItemList = ( {productos = []} ) => {
 
     return (
         <div className="container">
-            { productos.map((prod) => <Item producto={prod} key={prod.id}/>)}
+            { productos.map((prod, index) => <Item producto={prod} key={index}/>)}
         </div>
     )
 }
