@@ -6,8 +6,8 @@ import ItemList from "../ItemList/ItemList";
 import MoonLoader from "react-spinners/MoonLoader";
 import Banner from '../Banner/Banner.jsx';
 import '../Spinners/MoonLoader.scss';
-import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../Firebase/config'
+import { collection, getDocs, query, where } from "firebase/firestore"
 
 export default function ItemListContainer() {
 
@@ -17,18 +17,20 @@ export default function ItemListContainer() {
 
     useEffect(() => {
         setLoading(true)
-        //Armado de referencia a firebase
-        const productosRef = collection(db, 'productos')
-        //Consumir referencia
-        getDocs(productosRef)
-          .then((resp) => {
-            const dataProductos = resp.docs.map((doc) => ({id: doc.id, ...doc.data()}))
-            setProductos(dataProductos)
-          })
-          .finally(() => {
-            setLoading(false)
-          })
+        const productosRef = collection(db, 'stockProductos')
+        const q = categoryId 
+                    ? query(productosRef, where('tipo', '==', categoryId) )
+                    : productosRef
+        getDocs(q)
+            .then((resp) => {
+                const productosDB = resp.docs.map( (doc) => ({id: doc.id, ...doc.data()}) )
+                setProductos(productosDB)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
     }, [categoryId])
+
   
   return (
   <>

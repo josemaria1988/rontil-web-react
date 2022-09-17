@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { pedirDatos } from '../../helpers/pedirDatos.js';
 import './RelatedItems.scss';
 import { useNavigate } from 'react-router-dom';
 import MoonLoader from 'react-spinners/MoonLoader.js';
 import '../Spinners/MoonLoader.scss';
+import { db } from '../../Firebase/config'
+import { collection, getDocs, query, where } from "firebase/firestore"
 
 const RelatedItems = ({ categoria }) => {
 
@@ -12,14 +13,20 @@ const RelatedItems = ({ categoria }) => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        pedirDatos()
-            .then((res) => {
-                setProducto(res.filter((prod) => prod.tipo === categoria))
+        setLoading(true)
+        const productosRef = collection(db, 'stockProductos')
+        const q = categoria 
+                    ? query(productosRef, where('tipo', '==', categoria) )
+                    : productosRef
+        getDocs(q)
+            .then((resp) => {
+                const productosDB = resp.docs.map( (doc) => ({id: doc.id, ...doc.data()}) )
+                setProducto(productosDB)
             })
-            .catch(err => console.log(err))
             .finally(() => {
                 setLoading(false)
             })
+        
     }, [categoria])
 
     let navigate = useNavigate();
