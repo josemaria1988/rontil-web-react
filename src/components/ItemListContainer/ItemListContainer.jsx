@@ -18,9 +18,7 @@ export default function ItemListContainer() {
     useEffect(() => {
         setLoading(true)
         const productosRef = collection(db, 'stockProductos')
-        const q = categoryId 
-                    ? query(productosRef, where('tipo', '==', categoryId) )
-                    : productosRef
+        const q = categoryId ? query(productosRef, where('tipo', '==', categoryId) ) : productosRef
         getDocs(q)
             .then((resp) => {
                 const productosDB = resp.docs.map( (doc) => ({id: doc.id, ...doc.data()}) )

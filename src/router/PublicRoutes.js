@@ -6,6 +6,7 @@ import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailCon
 import Nosotros from '../components/Nosotros/Nosotros'
 import Contacto from '../components/Contacto/Contacto'
 import Cart from '../components/Cart/Cart'
+import Login from '../components/Login/Login'
 
 const PublicRoutes = () => {
 
@@ -19,6 +20,7 @@ const PublicRoutes = () => {
                 <Route path='/nosotros' element={<Nosotros />} />
                 <Route path='/contacto' element={<Contacto />} />
                 <Route path='/detail/:itemId' element={<ItemDetailContainer />} />
+                <Route path='/login' element={<Login/>} />
                 <Route path='/cart' element={<Cart />} />
 
             </Routes>

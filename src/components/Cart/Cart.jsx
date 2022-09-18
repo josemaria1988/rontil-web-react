@@ -36,6 +36,7 @@ const Cart = () => {
 
     return (
 
+        <div className="cart-big-father">
         <div className="cart-container">
             
             {
@@ -75,6 +76,7 @@ const Cart = () => {
                     </>
             }
 
+        </div>
         </div>
     )
 }

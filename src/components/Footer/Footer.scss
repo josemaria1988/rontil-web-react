@@ -1,60 +1,67 @@
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url("../../assets/img/logo.png");
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-color: #cccccc;
-    animation: scroll 70s linear infinite;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    transition: 0.5s;
 }
 
-@keyframes mymove {
-    from {background-color: red;}
-    to {background-color: blue;}
-  }
-
-.social-media {
-    display: flex;
-    margin: 50px;
+footer {
     width: 100%;
+    padding: 2rem 8%;
+    background-color: whitesmoke;
+    display: flex;
     justify-content: center;
-    list-style: none;
+    align-items: center;
+    flex-direction: column;
+}
+.footer-logo {
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.social-icons-container, .footer-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
 }
 
 .social-media-link {
-    display: inline-block;
-    text-decoration: none;
-    color: grey;
-    margin: 15px 15px;
-    padding: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    margin: 1rem;
+    color: brown;
 }
 
-.social-media-link:hover {
-    transform: translateY(-10px);
+.social-media-linkg:hover {
+    background-color: #121212;
+    filter: invert(1);
 }
 
-.menu-footer {
-    display: flex;
-    margin: 50px;
-    width: 100%;
-    justify-content: center;
-    list-style: none;
+.footer-menu-container {
+    list-style-type: none;
+    color: brown;
+    font-size: 18px;
 }
 
 .menu-footer-link {
-    display: inline-block;
-    border-radius: 40px;
+    list-style: none;
     text-decoration: none;
-    color: black;
-    font-size: 2rem;
-    margin: 0px 10px;
-    padding: 10px;
+    color: brown;
+    margin: 1rem 1.5rem;
+    cursor: pointer;
+    opacity: 0.6;
 }
 
 .menu-footer-link:hover {
-    background: grey;
-    transition: 0.5s;
-    color: whitesmoke;
+    opacity: 1;
+}
+
+.copyright {
+    color: black;
+    opacity: 0.3;
+    text-align: center;
 }
