@@ -35,7 +35,7 @@ const Navbar = () => {
 
                     <li className="nav-menu-item"><Link to='/nosotros' className="nav-link">Nosotros</Link></li>
                     <li className="nav-menu-item"><Link to='/contacto' className="nav-link">Contacto</Link></li>
-                    <li className="nav-menu-item"><Link to='/cart'> <CartWidget /> </Link></li>
+                    <li className="nav-menu-item"><Link to='/cart' className="nav-link-cart"> <CartWidget /> </Link></li>
 
                     {
                         user ? <li className="nav-menu-item"><Link to="/usuario" className="nav-link">{user.user}</Link><button onClick={logout}>Logout</button></li> : ""
