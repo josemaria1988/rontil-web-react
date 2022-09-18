@@ -1,0 +1,129 @@
+.body-contacto {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+
+.container-contacto {
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke;
+}
+
+.contacto-izquierdo {
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    min-width: 500px;
+}
+
+.imagen-contacto {
+    width: 100%;
+    min-height: 400px;
+}
+.texto-imagen {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+}
+
+.contacto-derecho {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 7.3% 0 4.7%;
+    width: 50%;
+}
+
+.contacto-title {
+    color: brown;
+    font-size: 70px;
+    font-weight: 400;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+}
+
+.formulario-contacto, .contacto-input-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contacto-input-wrapper {
+    margin-bottom: 45px;
+}
+.contact-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: brown;
+}
+
+.input-contacto {
+    height: 30px;
+    outline: none;
+    padding: 5px 0;
+    border-bottom: 2px solid brown;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    color: #121212;
+    background-color: transparent;
+}
+
+.input-contacto-mensaje {
+    height: 100px;
+    outline: none;
+    padding: 5px 0;
+    border-bottom: 2px solid brown;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    color: #121212;
+    background-color: transparent;
+    resize: none;
+}
+
+.input-contacto-enviar {
+    padding: 18px 55px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    color: brown;
+    font-weight: 600;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.input-contacto-enviar:hover {
+    background-color: #034574;
+    color: white;
+}
+
+@media screen and (max-width: 900px){
+  
+    .container-contacto {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
