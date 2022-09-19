@@ -8,6 +8,7 @@ import Banner from '../Banner/Banner.jsx';
 import '../Spinners/MoonLoader.scss';
 import { db } from '../../Firebase/config'
 import { collection, getDocs, query, where } from "firebase/firestore"
+import Searchbar from '../Searchbar/Searchbar.jsx'
 
 export default function ItemListContainer() {
 
@@ -36,6 +37,7 @@ export default function ItemListContainer() {
      : 
      <div>
       <Banner/>
+       <Searchbar/>
       {
         categoryId ? <h4 className="cardsTittle">{categoryId}</h4> : <h4 className="cardsTittle">Todos los Productos</h4>
       }

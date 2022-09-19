@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import { useLoginContext } from '../../Context/LoginContext'
-import Searchbar from '../Searchbar/Searchbar.jsx'
+
 
 const Navbar = () => {
 
@@ -46,7 +46,7 @@ const Navbar = () => {
                     <div className="nav-btn"><MenuIcon /></div>
                 </div>
             </nav>
-           <Searchbar className="searchbar-style"/>
+           
 
         </header>
     )
