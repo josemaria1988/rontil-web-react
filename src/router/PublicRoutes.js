@@ -8,11 +8,13 @@ import Contacto from '../components/Contacto/Contacto'
 import Cart from '../components/Cart/Cart'
 import Login from '../components/Login/Login'
 
+
 const PublicRoutes = () => {
 
     return (
         <>
             <Navbar />
+            
             <Routes>
 
                 <Route path='/' element={<ItemListContainer />} />
