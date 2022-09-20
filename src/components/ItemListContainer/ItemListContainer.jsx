@@ -16,6 +16,7 @@ export default function ItemListContainer() {
   const [loading, setLoading] = useState(true)
   const {categoryId} = useParams()
 
+
     useEffect(() => {
         setLoading(true)
         const productosRef = collection(db, 'stockProductos')
@@ -26,22 +27,23 @@ export default function ItemListContainer() {
                 setProductos(productosDB)
             })
             .finally(() => {
-                setLoading(false)
+                setLoading(false) 
             })
     }, [categoryId])
 
-  
+
   return (
   <>
     {loading ? <div className="spinner" ><MoonLoader/> </div>  
      : 
      <div>
       <Banner/>
-       <Searchbar/>
+      <Searchbar className="searchbar"/>
       {
         categoryId ? <h4 className="cardsTittle">{categoryId}</h4> : <h4 className="cardsTittle">Todos los Productos</h4>
       }
     <div  className="divCards">
+    
       <ItemList productos={productos}/>
 
     </div>

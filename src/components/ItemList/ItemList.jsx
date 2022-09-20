@@ -1,13 +1,19 @@
 import React from "react";
 import Item from "../Item/Item";
 import './ItemList.scss'
+import { useSearchContext } from '../../Context/SearchContext'
 
 
 const ItemList = ( {productos = []} ) => {
 
+    const { search } = useSearchContext()
+
+    const resultado = productos.filter((item) => item.nombre.toLowerCase().includes(search))
+
+
     return (
         <div className="container">
-            { productos.map((prod, index) => <Item producto={prod} key={index}/>)}
+            { resultado.map((prod, index) => <Item producto={prod} key={index}/>)}
         </div>
     )
 }

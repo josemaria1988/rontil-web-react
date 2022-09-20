@@ -3,12 +3,12 @@ import { getFirestore } from 'firebase/firestore'
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAuzp_VLQpEW8DpRDP_AGq9fr7p4eEPz3M",
-  authDomain: "rontil-web-react.firebaseapp.com",
-  projectId: "rontil-web-react",
-  storageBucket: "rontil-web-react.appspot.com",
-  messagingSenderId: "941429383805",
-  appId: "1:941429383805:web:d993cd017148bd20894714"
+  apiKey: "AIzaSyDVU0VgGAmewtWirc0tbft1OOqRlWma-UM",
+  authDomain: "rontil-react.firebaseapp.com",
+  projectId: "rontil-react",
+  storageBucket: "rontil-react.appspot.com",
+  messagingSenderId: "228174285559",
+  appId: "1:228174285559:web:c76d6926d3860320fb61f2"
 };
 
 // Referencias a Firestore
