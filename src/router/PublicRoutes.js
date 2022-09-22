@@ -7,6 +7,7 @@ import Nosotros from '../components/Nosotros/Nosotros'
 import Contacto from '../components/Contacto/Contacto'
 import Cart from '../components/Cart/Cart'
 import Login from '../components/Login/Login'
+import Checkout from '../components/Checkout/Checkout'
 
 
 const PublicRoutes = () => {
@@ -24,6 +25,7 @@ const PublicRoutes = () => {
                 <Route path='/detail/:itemId' element={<ItemDetailContainer />} />
                 <Route path='/login' element={<Login/>} />
                 <Route path='/cart' element={<Cart />} />
+                <Route path='/checkout' element={<Checkout/>}/>
 
             </Routes>
             <Footer />

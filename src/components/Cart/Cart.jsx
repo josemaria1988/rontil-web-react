@@ -1,9 +1,6 @@
 import React from 'react';
 import { useCartContext } from '../../Context/CartContext';
 import './Cart.scss'
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-import DoneIcon from '@mui/icons-material/Done';
 import { Link } from 'react-router-dom';
 import ClearIcon from '@mui/icons-material/Clear';
 import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp';
@@ -11,27 +8,7 @@ import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp';
 
 const Cart = () => {
 
-    const { cart, cartTotal, emptyCart, removeItem } = useCartContext();
-
-    const handleFinalizar = () => {
-
-        const MySwal = withReactContent(Swal)
-        if (cart.length !== 0) {
-            return MySwal.fire({
-                title: <p>Procesando pago</p>,
-                timer: 1500,
-                didOpen: () => {
-                    MySwal.showLoading()
-                },
-            }).then(() => {
-                return MySwal.fire(
-
-                    <p>Compra realizada con éxito! <DoneIcon /></p>,
-                    emptyCart()
-                )
-            })
-        }
-    }
+    const { cart, cartTotal, emptyCart, removeItem, handleFinalizar } = useCartContext();
 
 
     return (
@@ -70,6 +47,7 @@ const Cart = () => {
                             <span className="total-carrito">
                                 Total: $ {cartTotal()}
                             </span>
+                            <Link className="btn btn-success mx-3" to="/checkout">Terminar mi compra</Link>
                             <button onClick={handleFinalizar} className="btn-finalizar-compra">FINALIZAR COMPRA -<CheckCircleSharpIcon/></button>
                         </div>
 

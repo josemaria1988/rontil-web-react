@@ -11,6 +11,7 @@ const init = JSON.parse(localStorage.getItem('carrito')) || []
 export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState(init)
+    const MySwal = withReactContent(Swal)
 
 
     const addToCart = (item) => {
@@ -26,7 +27,7 @@ export const CartProvider = ({ children }) => {
     }
 
     const getStock = (item) => {
-        const MySwal = withReactContent(Swal)
+
         MySwal.fire({
             title: <p>Un momento...</p>,
             timer: 500,
@@ -34,7 +35,8 @@ export const CartProvider = ({ children }) => {
                 MySwal.showLoading()
             },
         }).then(() => {
-            return MySwal.fire(<p>Tu solicitud de {item.nombre} excede el stock disponible. Hemos ajustado su cantidad a {item.stock} unidades. <ErrorOutlineIcon /></p>,)})
+            return MySwal.fire(<p>Tu solicitud de {item.nombre} excede el stock disponible. Hemos ajustado su cantidad a {item.stock} unidades. <ErrorOutlineIcon /></p>,)
+        })
     }
 
 
@@ -62,6 +64,21 @@ export const CartProvider = ({ children }) => {
         localStorage.setItem('carrito', JSON.stringify(cart))
     }, [cart])
 
+    const handleFinalizar = () => {
+
+        if (cart.length !== 0) {
+            return MySwal.fire({
+                title: <p>Procesando pedido...</p>,
+                timer: 1500,
+                didOpen: () => {
+                    MySwal.showLoading()
+                },
+            }).then(function() {
+                window.location = "/checkout";
+            })
+        }
+    }
+
     return (
         <CartContext.Provider value={{
             cart,
@@ -70,7 +87,8 @@ export const CartProvider = ({ children }) => {
             cartQuantity,
             cartTotal,
             emptyCart,
-            removeItem
+            removeItem,
+            handleFinalizar
         }}>
             {children}
         </CartContext.Provider>
