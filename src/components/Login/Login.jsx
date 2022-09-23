@@ -1,8 +1,11 @@
 import React from 'react';
 import './Login.scss'
+import { Link } from 'react-router-dom'
 
 
 const Login = () => {
+
+
 
     
     return (
@@ -17,7 +20,7 @@ const Login = () => {
             </form>
             <div>
                 <h4>Aun no estás registrado?</h4>
-                <button>Registrarse</button>
+                <Link to='/registro'>Registrarse</Link>
             </div>
         </div>
     )

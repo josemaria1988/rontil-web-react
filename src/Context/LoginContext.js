@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
-
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Firebase/config";
 
 
 export const LoginContext = createContext()
@@ -23,12 +24,18 @@ const usuarios = [
     }
 ]
 
+
+
 export const LoginProvider = ({children}) => {
 
     const [user, setUser] = useState({
         user: '',
         logged: false
     })
+
+    const signUp = (email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
 
     const login = (values) => {
         const match = usuarios.find(user => user.email === values.email)
@@ -56,7 +63,7 @@ export const LoginProvider = ({children}) => {
 
 
     return (
-        <LoginContext.Provider value={{user, login, logout}}>
+        <LoginContext.Provider value={{user, login, logout, signUp}}>
             {children}
         </LoginContext.Provider>
     )

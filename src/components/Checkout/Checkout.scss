@@ -1,0 +1,70 @@
+.body-confirmado {
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.container-confirmado {
+    margin-top: 100px;
+    padding: 15px;
+    height: 85%;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    box-shadow: 0px 25px 40px grey
+}
+
+.titulo-respuesta {
+    font-size: 38px;
+    color: brown;
+}
+
+.codigo-respuesta {
+    font-size: 24px;
+}
+
+.ordenId {
+    color: brown;
+    text-decoration-line: underline;
+}
+
+.link-compra-finalizada {
+    text-decoration: none;
+
+}
+
+.link-compra-finalizada {
+    float: right;
+    margin-right: 5%;
+    margin-top: 15px;
+    width: 30%;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    width: 200px;
+    padding: 10px;
+    color: #034574;
+    border: 1px solid #034574;
+    border-radius: 4px;
+    transition: all 400ms ease;
+    text-decoration: none;
+}
+
+.link-compra-finalizada:hover {
+    background: #034574;
+    color: #fff;
+    cursor: pointer;
+}
+
+.mensaje-error {
+    font-size: 28px;
+    color: white;
+    background-color: red;
+    font-weight: bold;
+    text-align: center;
+}

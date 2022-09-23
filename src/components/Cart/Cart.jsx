@@ -47,7 +47,6 @@ const Cart = () => {
                             <span className="total-carrito">
                                 Total: $ {cartTotal()}
                             </span>
-                            <Link className="btn btn-success mx-3" to="/checkout">Terminar mi compra</Link>
                             <button onClick={handleFinalizar} className="btn-finalizar-compra">FINALIZAR COMPRA -<CheckCircleSharpIcon/></button>
                         </div>
 

@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
 import { useCartContext } from '../../Context/CartContext';
-import { addDoc, collection, writeBatch, query, where, documentId, getDocs } from 'firebase/firestore';
+import { addDoc, collection, writeBatch, query, where, documentId, getDocs, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../Firebase/config';
+import './Checkout.scss'
+import { Link } from 'react-router-dom';
+import MoonLoader from 'react-spinners/MoonLoader';
 
 const Checkout = () => {
 
     const { cart, cartTotal, emptyCart } = useCartContext()
 
+    const [loading, setLoading] = useState(false)
+    const [mensajeError, setMensajeError] = useState('')
     const [orderId, setOrderId] = useState(null);
-    const [values, setValues] = useState({
+
+    const [comprador, setComprador] = useState({
         nombre: '',
         email: '',
         phone: '',
@@ -18,8 +23,8 @@ const Checkout = () => {
     })
 
     const handleInputChange = (e) => {
-        setValues({
-            ...values,
+        setComprador({
+            ...comprador,
             [e.target.name]: e.target.value
         })
     }
@@ -28,34 +33,36 @@ const Checkout = () => {
         e.preventDefault()
 
         const orden = {
-            comprador: values,
+            comprador: comprador,
             items: cart,
-            total: cartTotal()
+            total: cartTotal(),
+            date: serverTimestamp()
         }
 
-        if (values.nombre.length < 2) {
-            alert("Nombre incorrecto")
+        if (comprador.nombre.length < 2) {
+            setMensajeError('Completa tu nombre correctamente!!!')
             return
         }
 
-        if (values.email.length < 2) {
-            alert("Email incorrecto")
+        if (comprador.email.length < 2) {
+            setMensajeError('Completa tu email correctamente!!!')
             return
         }
-        if (values.phone.length < 9) {
-            alert("Teléfono incorrecto")
+        if (comprador.phone.length < 9) {
+            setMensajeError('Completa tu teléfono correctamente!!!')
+            return
         }
 
         const batch = writeBatch(db)
         const ordenesRef = collection(db, 'ordenes')
         const productosRef = collection(db, 'stockProductos')
-    
-        const q = query(productosRef, where(documentId(), 'in', cart.map(item => item.id)))
+
+        const q = query(productosRef, where(documentId(), 'in', cart.map(item => item.id.toString())))
 
         const productos = await getDocs(q)
 
         const sinStock = []
-            
+
         productos.docs.forEach((doc) => {
             const itemInCart = cart.find(item => item.id === doc.id)
 
@@ -71,15 +78,22 @@ const Checkout = () => {
         if (sinStock.length === 0) {
             batch.commit()
                 .then(() => {
+                    setLoading(true)
                     addDoc(ordenesRef, orden)
                         .then((doc) => {
-                            console.log(doc.id)
                             setOrderId(doc.id)
                             emptyCart()
                         })
+                        .catch((error) => {
+                            setMensajeError(error)
+                        })
+                        .finally(() => {
+                            setLoading(false)
+                        })
+
                 })
         } else {
-            
+
             alert("Hay items sin stock")
             console.log(sinStock)
         }
@@ -88,16 +102,24 @@ const Checkout = () => {
 
     if (orderId) {
         return (
-            <div className="container my-5">
-                <h2>Compra exitosa!</h2>
-                <hr/>
-                <p>Tu número de orden es: <strong>{orderId}</strong></p>
-            </div>
-        )
-    }
+            <>
+                {loading ? <div className="spinner" ><MoonLoader /> </div>
+                    :
+                    <main className="body-confirmado">
+                        <div className="container-confirmado">
 
-    if (cart.length === 0) {
-        return <Navigate to="/"/>
+                            <div className="container-respuesta">
+                                <h2 className="titulo-respuesta">Compra exitosa!</h2>
+                                <p className="codigo-respuesta">Tu número de orden es: <strong className="ordenId">{orderId}</strong></p>
+                                <div className="detalle-compra-finalizada">
+                                </div>
+                                <Link to="/" className="link-compra-finalizada">Volver a Inicio</Link>
+                            </div>
+                        </div>
+                    </main>
+                }
+            </>
+        )
     }
 
 
@@ -110,37 +132,38 @@ const Checkout = () => {
                     <form onSubmit={handleSubmit} className="formulario-contacto">
                         <div className="contacto-input-wrapper">
                             <label className="contact-label">Nombre</label>
-                            <input 
-                                onChange={handleInputChange} 
-                                className="input-contacto" 
-                                type="text" 
-                                name="nombre" 
-                                value={values.nombre}
+                            <input
+                                onChange={handleInputChange}
+                                className="input-contacto"
+                                type="text"
+                                name="nombre"
+                                value={comprador.nombre}
                                 placeholder="Nombre" />
                         </div>
                         <div className="contacto-input-wrapper">
                             <label className="contact-label">Email</label>
-                            <input 
-                                onChange={handleInputChange} 
-                                className="input-contacto" 
-                                type="email" 
-                                name="email" 
-                                value={values.email}
+                            <input
+                                onChange={handleInputChange}
+                                className="input-contacto"
+                                type="email"
+                                name="email"
+                                value={comprador.email}
                                 placeholder="Email" />
                         </div>
                         <div className="contacto-input-wrapper">
                             <label className="contact-label">Teléfono</label>
-                            <input 
-                                onChange={handleInputChange} 
-                                className="input-contacto" 
-                                type="number" 
-                                name="phone" 
-                                value={values.phone}
+                            <input
+                                onChange={handleInputChange}
+                                className="input-contacto"
+                                type="number"
+                                name="phone"
+                                value={comprador.phone}
                                 placeholder="Teléfono" />
                         </div>
                         <div className="contacto-input-wrapper">
                             <label className="contact-label">Aclaraciones adicionales</label>
                             <textarea onChange={handleInputChange} className="input-contacto-mensaje" type="message" name="message" placeholder="Mensaje"></textarea>
+                            {mensajeError && <p className="mensaje-error">{mensajeError}</p>}
                             <button type="submit" value="submit" className="input-contacto-enviar">Confirmar</button>
                         </div>
                     </form>
