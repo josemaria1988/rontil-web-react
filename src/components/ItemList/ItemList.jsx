@@ -8,7 +8,7 @@ const ItemList = ( {productos = []} ) => {
 
     const { search } = useSearchContext()
 
-    const resultado = productos.filter((item) => item.nombre.toLowerCase().includes(search))
+    const resultado = productos.filter((item) => item.nombre.toLowerCase().includes(search.toLowerCase()))
 
 
     return (

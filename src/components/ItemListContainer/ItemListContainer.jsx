@@ -17,6 +17,7 @@ export default function ItemListContainer() {
   const {categoryId} = useParams()
 
 
+
     useEffect(() => {
         setLoading(true)
         const productosRef = collection(db, 'stockProductos')
@@ -38,9 +39,11 @@ export default function ItemListContainer() {
      : 
      <div>
       <Banner/>
-      <Searchbar className="searchbar"/>
+      <div className="searchbar-container">
+        <Searchbar className="searchbar"/>
+      </div>
       {
-        categoryId ? <h4 className="cardsTittle">{categoryId}</h4> : <h4 className="cardsTittle">Todos los Productos</h4>
+        categoryId ? <h4 className="cardsTittle">{categoryId}</h4> : <h4 className="cardsTittle">Todos los productos</h4>
       }
     <div  className="divCards">
     
