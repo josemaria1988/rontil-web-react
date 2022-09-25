@@ -7,12 +7,13 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import { useLoginContext } from '../../Context/LoginContext'
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 const Navbar = () => {
 
     const [openMenu, setOpenMenu] = useState(false);
-    const { activeUser } = useLoginContext()
+    const { activeUser, logout } = useLoginContext()
     return (
         <header className="navHeader">
             <nav className="navBar">
@@ -36,9 +37,32 @@ const Navbar = () => {
 
                     <li className="nav-menu-item"><Link to='/nosotros' className="nav-link">Nosotros</Link></li>
                     <li className="nav-menu-item"><Link to='/contacto' className="nav-link">Contacto</Link></li>
-                    
+
                     {
-                        activeUser ? <li className="nav-menu-item"><Link to="/usuario" className="nav-link">Mi Perfil</Link></li> : <li className="nav-menu-item"><Link to='/login' className="nav-link">Login</Link></li>
+                        activeUser ?
+
+                            <li className="nav-menu-item">
+                                <div className="dropdown">
+                                    <Link to="/usuario" className="nav-link dropbtn">{activeUser.email}</Link>
+                                    <div className="dropdown-content">
+                                        <Link to="/usuario" className="dropdown-link nav-link">Mi Perfil</Link>
+                                        <span onClick={logout} className="dropdown-link nav-link">LOGOUT - <LogoutIcon/></span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            :
+
+                            <li className="nav-menu-item">
+
+                                <div className="dropdown">
+                                    <Link to='/login' className="nav-link dropbtn">Usuario</Link>
+                                    <div className="dropdown-content">
+                                        <Link to='/login' className="dropdown-link nav-link">Login</Link>
+                                        <Link to='/registro' className="dropdown-link nav-link">Registro</Link>
+                                    </div>
+                                </div>
+                            </li>
                     }
                     <li className="nav-menu-item"><Link to='/cart' className="nav-link-cart"> <CartWidget /> </Link></li>
 
@@ -47,7 +71,7 @@ const Navbar = () => {
                     <div className="nav-btn"><MenuIcon /></div>
                 </div>
             </nav>
-           
+
 
         </header>
     )

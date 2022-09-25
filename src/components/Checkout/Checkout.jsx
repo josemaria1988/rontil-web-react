@@ -5,52 +5,26 @@ import { db } from '../../Firebase/config';
 import './Checkout.scss'
 import { Link } from 'react-router-dom';
 import MoonLoader from 'react-spinners/MoonLoader';
+import { useLoginContext } from '../../Context/LoginContext';
+import Registro from '../Login/Registro';
 
 const Checkout = () => {
 
     const { cart, cartTotal, emptyCart } = useCartContext()
+    const { activeUser } = useLoginContext()
 
     const [loading, setLoading] = useState(false)
-    const [mensajeError, setMensajeError] = useState('')
     const [orderId, setOrderId] = useState(null);
-
-    const [comprador, setComprador] = useState({
-        nombre: '',
-        email: '',
-        phone: '',
-        direccion: '',
-        message: ''
-    })
-
-    const handleInputChange = (e) => {
-        setComprador({
-            ...comprador,
-            [e.target.name]: e.target.value
-        })
-    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
         const orden = {
-            comprador: comprador,
+            comprador: activeUser.uid,
+            contacto: activeUser.email,
             items: cart,
             total: cartTotal(),
             date: serverTimestamp()
-        }
-
-        if (comprador.nombre.length < 2) {
-            setMensajeError('Completa tu nombre correctamente!!!')
-            return
-        }
-
-        if (comprador.email.length < 2) {
-            setMensajeError('Completa tu email correctamente!!!')
-            return
-        }
-        if (comprador.phone.length < 9) {
-            setMensajeError('Completa tu teléfono correctamente!!!')
-            return
         }
 
         const batch = writeBatch(db)
@@ -66,13 +40,13 @@ const Checkout = () => {
         productos.docs.forEach((doc) => {
             const itemInCart = cart.find(item => item.id === doc.id)
 
-            if (doc.data().stock >= itemInCart.cantidad) {
+            if (doc.data().color.stock >= itemInCart.cantidad) {
                 batch.update(doc.ref, {
-                    stock: doc.data().stock - itemInCart.cantidad
+                    stock: doc.data().color.stock - itemInCart.cantidad
                 })
             } else {
                 sinStock.push(itemInCart)
-            }
+            }   
         })
 
         if (sinStock.length === 0) {
@@ -85,7 +59,7 @@ const Checkout = () => {
                             emptyCart()
                         })
                         .catch((error) => {
-                            setMensajeError(error)
+                            console.log(error)
                         })
                         .finally(() => {
                             setLoading(false)
@@ -110,6 +84,7 @@ const Checkout = () => {
 
                             <div className="container-respuesta">
                                 <h2 className="titulo-respuesta">Compra exitosa!</h2>
+                                <h4 className="titulo-respuesta">Muchas gracias {activeUser.email}</h4>
                                 <p className="codigo-respuesta">Tu número de orden es: <strong className="ordenId">{orderId}</strong></p>
                                 <div className="detalle-compra-finalizada">
                                 </div>
@@ -123,53 +98,27 @@ const Checkout = () => {
     }
 
 
-
-    return (
-        <main className="body-contacto">
+    if (activeUser) {
+        return (
+            <main className="body-contacto">
             <section className="container-contacto">
                 <div className="contacto-derecho">
-                    <h1 className="contacto-title">Tus datos</h1>
+                    <h1 className="contacto-title">{activeUser.email}</h1>
                     <form onSubmit={handleSubmit} className="formulario-contacto">
                         <div className="contacto-input-wrapper">
-                            <label className="contact-label">Nombre</label>
-                            <input
-                                onChange={handleInputChange}
-                                className="input-contacto"
-                                type="text"
-                                name="nombre"
-                                value={comprador.nombre}
-                                placeholder="Nombre" />
-                        </div>
-                        <div className="contacto-input-wrapper">
-                            <label className="contact-label">Email</label>
-                            <input
-                                onChange={handleInputChange}
-                                className="input-contacto"
-                                type="email"
-                                name="email"
-                                value={comprador.email}
-                                placeholder="Email" />
-                        </div>
-                        <div className="contacto-input-wrapper">
-                            <label className="contact-label">Teléfono</label>
-                            <input
-                                onChange={handleInputChange}
-                                className="input-contacto"
-                                type="number"
-                                name="phone"
-                                value={comprador.phone}
-                                placeholder="Teléfono" />
-                        </div>
-                        <div className="contacto-input-wrapper">
-                            <label className="contact-label">Aclaraciones adicionales</label>
-                            <textarea onChange={handleInputChange} className="input-contacto-mensaje" type="message" name="message" placeholder="Mensaje"></textarea>
-                            {mensajeError && <p className="mensaje-error">{mensajeError}</p>}
-                            <button type="submit" value="submit" className="input-contacto-enviar">Confirmar</button>
+                            <label className="contact-label">$ {cartTotal()} serán cargados a tu cuenta!</label>
+                            <button type="submit" value="submit" className="input-contacto-enviar">Confirmar mi compra</button>
                         </div>
                     </form>
                 </div>
             </section>
         </main>
+        )
+    }
+
+    return (
+       
+       <Registro/>
     )
 }
 

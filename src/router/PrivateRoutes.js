@@ -6,7 +6,7 @@ import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailCon
 import Nosotros from '../components/Nosotros/Nosotros'
 import Contacto from '../components/Contacto/Contacto'
 import Cart from '../components/Cart/Cart'
-import Login from '../components/Login/Login'
+import Profile from '../components/Profile/Profile'
 import Checkout from '../components/Checkout/Checkout'
 
 const PrivateRoutes = () => {
@@ -21,7 +21,7 @@ const PrivateRoutes = () => {
                 <Route path='/nosotros' element={<Nosotros />} />
                 <Route path='/contacto' element={<Contacto />} />
                 <Route path='/detail/:itemId' element={<ItemDetailContainer />} />
-                <Route path='/login' element={<Login/>} />
+                <Route path='/usuario' element={<Profile/>} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/checkout' element={<Checkout/>}/>
 
