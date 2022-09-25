@@ -1,33 +1,15 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import './ItemDetailContainer.scss'
-import {useParams} from 'react-router-dom';
+import { useProducto } from '../../hooks/useProducto'
 import ItemDetail from "../ItemDetail/ItemDetail.jsx"
 import MoonLoader from "react-spinners/MoonLoader";
 import RelatedItems from '../../components/RelatedItems/RelatedItems.jsx'
 import {Link} from 'react-router-dom'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { doc, getDoc } from 'firebase/firestore'
-import { db } from '../../Firebase/config.js'
 
 const ItemDetailContainer = () => {
 
-  const [producto, setProductos] = useState([])
-  const [loading, setLoading] = useState(true)
-  const {itemId} = useParams()
-
-  useEffect(() => {
-    setLoading(true)
-    const itemRef = doc(db, 'stockProductos', itemId) 
-    getDoc(itemRef)
-      .then((resp) => {
-        setProductos({id: resp.id, ...resp.data() })
-      })
-      .finally(() => {
-        setLoading(false)
-      })
-
-}, [itemId])
-
+  const { producto, loading } = useProducto()
   
   return (
   <div className="item-detail-container-div">

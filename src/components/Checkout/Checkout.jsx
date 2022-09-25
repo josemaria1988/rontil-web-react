@@ -6,12 +6,16 @@ import './Checkout.scss'
 import { Link } from 'react-router-dom';
 import MoonLoader from 'react-spinners/MoonLoader';
 import { useLoginContext } from '../../Context/LoginContext';
-import Registro from '../Login/Registro';
+import Login from '../Login/Login';
+import { useForm } from '../../hooks/useForm'
 
 const Checkout = () => {
 
     const { cart, cartTotal, emptyCart } = useCartContext()
     const { activeUser } = useLoginContext()
+    const { values, handleInputChange } = useForm({
+        direccion: '',
+    })
 
     const [loading, setLoading] = useState(false)
     const [orderId, setOrderId] = useState(null);
@@ -22,6 +26,7 @@ const Checkout = () => {
         const orden = {
             comprador: activeUser.uid,
             contacto: activeUser.email,
+            direccion: values.direccion,
             items: cart,
             total: cartTotal(),
             date: serverTimestamp()
@@ -31,7 +36,7 @@ const Checkout = () => {
         const ordenesRef = collection(db, 'ordenes')
         const productosRef = collection(db, 'stockProductos')
 
-        const q = query(productosRef, where(documentId(), 'in', cart.map(item => item.id.toString())))
+        const q = query(productosRef, where('id', 'in', cart.map(item => item.id.toString())))
 
         const productos = await getDocs(q)
 
@@ -46,7 +51,7 @@ const Checkout = () => {
                 })
             } else {
                 sinStock.push(itemInCart)
-            }   
+            }
         })
 
         if (sinStock.length === 0) {
@@ -86,8 +91,6 @@ const Checkout = () => {
                                 <h2 className="titulo-respuesta">Compra exitosa!</h2>
                                 <h4 className="titulo-respuesta">Muchas gracias {activeUser.email}</h4>
                                 <p className="codigo-respuesta">Tu número de orden es: <strong className="ordenId">{orderId}</strong></p>
-                                <div className="detalle-compra-finalizada">
-                                </div>
                                 <Link to="/" className="link-compra-finalizada">Volver a Inicio</Link>
                             </div>
                         </div>
@@ -100,25 +103,37 @@ const Checkout = () => {
 
     if (activeUser) {
         return (
-            <main className="body-contacto">
-            <section className="container-contacto">
-                <div className="contacto-derecho">
-                    <h1 className="contacto-title">{activeUser.email}</h1>
-                    <form onSubmit={handleSubmit} className="formulario-contacto">
-                        <div className="contacto-input-wrapper">
-                            <label className="contact-label">$ {cartTotal()} serán cargados a tu cuenta!</label>
-                            <button type="submit" value="submit" className="input-contacto-enviar">Confirmar mi compra</button>
-                        </div>
-                    </form>
-                </div>
-            </section>
-        </main>
+            <main className="body-confirmado">
+                <section className="container-confirmado">
+                    <div className="container-respuesta">
+                        <h1 className="titulo-respuesta">{activeUser.email}</h1>
+                        <form onSubmit={handleSubmit} className="formulario-contacto">
+                            <div className="contacto-input-wrapper">
+                                <label className="contact-label">Serán cargados a tu cuenta $ {cartTotal()}</label>
+                                <div className="detalle-compra-finalizada">
+                                    <div className="detalle-father">
+
+                                        {cart.map((prod, index) =>
+                                            <div key={index} className="detalle-box-checkout">
+                                                <p className="detalle-producto-checkout">Producto: {prod.nombre} - {prod.color}</p>
+                                                <p className="detalle-producto-checkout">Cantidad: {prod.cantidad}</p>
+                                            </div>)}
+                                    </div>
+                                </div>
+                                <label className="contact-label">Dirección de envío</label>
+                                <input className="input-form"  name="direccion" onChange={handleInputChange} value={values.direccion} type={'text'} placeholder="Dirección"></input>
+                                <button type="submit" value="submit" className="input-contacto-enviar">Confirmar mi compra</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </main>
         )
     }
 
     return (
-       
-       <Registro/>
+
+        <Login prop="checkout"/>
     )
 }
 

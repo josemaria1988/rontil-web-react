@@ -61,11 +61,13 @@
     cursor: pointer;
 }
 
-.mensaje-error {
-    font-size: 28px;
-    color: white;
-    background-color: red;
-    font-weight: bold;
-    text-align: center;
+.detalle-father {
+    display: flex;
+    flex-direction: column;
+}
+.detalle-box-checkout {
+    display: flex;
+    margin: 5px;
+
 }
 

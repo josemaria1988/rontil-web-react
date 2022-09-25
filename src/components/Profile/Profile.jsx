@@ -1,30 +1,14 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import './Profile.scss'
-import { db } from '../../Firebase/config';
-import { collection, query, where,  getDocs, doc } from 'firebase/firestore';
-import { useLoginContext } from '../../Context/LoginContext';
+import { useOrdenes } from '../../hooks/useOrdenes'
 import MoonLoader from 'react-spinners/MoonLoader';
+import { useLoginContext } from '../../Context/LoginContext';
 
 const Profile = () => {
 
-    const [ordenes, setOrdenes] = useState([])
-    const [loading, setLoading] = useState(true)    
-
-    const { activeUser } = useLoginContext()
-
-    useEffect(() => {
-        setLoading(true)
-        const ordenesRef = collection(db, 'ordenes')
-        const q = activeUser ? query(ordenesRef, where('comprador', '==', activeUser.uid) ) : ordenesRef
-        getDocs(q)
-            .then((resp) => {
-                const ordenesDB = resp.docs.map((doc.id), " => ", doc.data() )
-                setOrdenes(ordenesDB)
-            })
-            .finally(() => {
-                setLoading(false) 
-            })
-    }, [activeUser.uid])
+    const { activeUser } = useLoginContext([])
+    activeUser = localStorage.getItem("usuario", JSON.parse(activeUser))
+    const { ordenes, loading } = useOrdenes()
 
    return (
     <>
@@ -37,15 +21,17 @@ const Profile = () => {
             <h1>Bienvenido a tu perfil {activeUser.email}</h1>
             <h4>Estas son tus compras</h4>
 
-            <div>
+            {/* <div>
                 {
                     ordenes.map((prod, index) => (<div key={index}>
+                        <p>Fecha: {prod.comprador}</p>
+                        <p>Fecha: {prod.contacto}</p>
                         <p>Fecha: {prod.date}</p>
                         <p>Items: {prod.items}</p>
                         <p>Total: {prod.total}</p>
                     </div>))
                 }
-            </div>
+            </div> */}
 
         </div>
     }

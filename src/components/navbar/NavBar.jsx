@@ -53,16 +53,7 @@ const Navbar = () => {
 
                             :
 
-                            <li className="nav-menu-item">
-
-                                <div className="dropdown">
-                                    <Link to='/login' className="nav-link dropbtn">Usuario</Link>
-                                    <div className="dropdown-content">
-                                        <Link to='/login' className="dropdown-link nav-link">Login</Link>
-                                        <Link to='/registro' className="dropdown-link nav-link">Registro</Link>
-                                    </div>
-                                </div>
-                            </li>
+                            <li className="nav-menu-item"><Link to='/login' className="nav-link">Login</Link></li>
                     }
                     <li className="nav-menu-item"><Link to='/cart' className="nav-link-cart"> <CartWidget /> </Link></li>
 

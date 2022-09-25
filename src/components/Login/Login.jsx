@@ -7,14 +7,14 @@ import MoonLoader from 'react-spinners/MoonLoader';
 
 
 
-const Login = () => {
+const Login = (prop) => {
 
     const navigate = useNavigate()
     const emailRef = useRef(null)
     const passRef = useRef(null)
     const [loading, setLoading] = useState(false)
 
-    const { signIn } = useLoginContext()
+    const { signIn, signUp } = useLoginContext()
 
     const handleSignIn = async (e) => {
         e.preventDefault()
@@ -30,6 +30,23 @@ const Login = () => {
             }
     }
 
+    const handleSignUp = async (e) => {
+            e.preventDefault()
+            try {
+                await signUp(auth, emailRef.current.value, passRef.current.value)
+                setLoading(true)
+                navigate("/")
+            }catch(error){
+                console.log(auth.currentUser)
+            }finally {
+                if(prop){
+                    navigate('/checkout')
+                }
+                setLoading(false)
+            }
+        }
+    
+
     return (
         <>
             {loading ? <div className="spinner" ><MoonLoader /> </div>
@@ -37,12 +54,13 @@ const Login = () => {
                 <div className="login-container">
 
 
-                    <h2 className="login-titulo">Iniciar Sesión</h2>
+                    <h2 className="login-titulo">Iniciar Sesión / Registrarse</h2>
 
                     <form className="login-form">
                         <input ref={emailRef} type="email" className="login-input" placeholder="email" />
                         <input ref={passRef} type="password" className="login-input" placeholder="password" />
-                        <button onClick={handleSignIn} className="login-submit" value="Aceptar">Sign in </button>
+                        <button onClick={handleSignIn} className="login-submit-login" value="Aceptar">Iniciar sesión </button>
+                        <button onClick={handleSignUp} className="login-submit-registro" value="Aceptar">Registrarse</button>
                     </form>
                 </div>
             }

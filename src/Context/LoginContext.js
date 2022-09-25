@@ -24,6 +24,7 @@ export const LoginProvider = ({children}) => {
     useEffect(() => {
         onAuthStateChanged(auth, currentUser => {
             setActiveUser(currentUser)
+            localStorage.setItem("usuario", JSON.stringify(activeUser))
         })
     }, [])
 

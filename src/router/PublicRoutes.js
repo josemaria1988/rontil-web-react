@@ -8,7 +8,7 @@ import Contacto from '../components/Contacto/Contacto'
 import Cart from '../components/Cart/Cart'
 import Login from '../components/Login/Login'
 import Checkout from '../components/Checkout/Checkout'
-import Registro from '../components/Login/Registro'
+import Profile from '../components/Profile/Profile'
 
 const PublicRoutes = () => {
 
@@ -24,7 +24,7 @@ const PublicRoutes = () => {
                 <Route path='/contacto' element={<Contacto />} />
                 <Route path='/detail/:itemId' element={<ItemDetailContainer />} />
                 <Route path='/login' element={<Login/>} />
-                <Route path='/registro' element={<Registro/>} />
+                <Route path='/usuario' element={<Profile/>} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/checkout' element={<Checkout/>}/>
 
