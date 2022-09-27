@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCartContext } from '../../Context/CartContext';
-import { addDoc, collection, writeBatch, query, where, documentId, getDocs, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, writeBatch, query, where, getDocs, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../Firebase/config';
 import './Checkout.scss'
 import { Link } from 'react-router-dom';
