@@ -6,6 +6,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import { useNavigate } from 'react-router-dom'
 
 
 const Cart = () => {
@@ -13,6 +14,7 @@ const Cart = () => {
     const { cart, cartTotal, emptyCart, removeItem } = useCartContext();
 
     const MySwal = withReactContent(Swal)
+    const navigate = useNavigate()
 
     const handleFinalizar = () => {
 
@@ -24,7 +26,7 @@ const Cart = () => {
                     MySwal.showLoading()
                 },
             }).then(function() {
-                window.location = "/checkout";
+                navigate("/checkout");
             })
         }
     }
