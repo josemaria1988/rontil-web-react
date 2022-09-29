@@ -26,6 +26,9 @@ const Login = (prop) => {
             }catch(error){
                 console.log(error)
             }finally{
+                if(prop){
+                    navigate('/checkout')
+                }
                 setLoading(false)
             }
     }
