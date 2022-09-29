@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import { Navigate } from "react-router-dom";
 
 export const CartContext = createContext()
 
@@ -9,6 +10,7 @@ export const CartContext = createContext()
 const init = JSON.parse(localStorage.getItem('carrito')) || []
 
 export const CartProvider = ({ children }) => {
+
 
     const [cart, setCart] = useState(init)
     const MySwal = withReactContent(Swal)
@@ -74,7 +76,7 @@ export const CartProvider = ({ children }) => {
                     MySwal.showLoading()
                 },
             }).then(function() {
-                window.location = "/checkout";
+                Navigate("/checkout");
             })
         }
     }
