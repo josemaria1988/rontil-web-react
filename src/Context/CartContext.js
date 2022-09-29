@@ -2,7 +2,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import { useNavigate } from "react-router-dom";
 
 export const CartContext = createContext()
 
@@ -11,10 +10,8 @@ const init = JSON.parse(localStorage.getItem('carrito')) || []
 
 export const CartProvider = ({ children }) => {
 
-
     const [cart, setCart] = useState(init)
     const MySwal = withReactContent(Swal)
-    const navigate = useNavigate()
 
 
     const addToCart = (item) => {
@@ -67,20 +64,7 @@ export const CartProvider = ({ children }) => {
         localStorage.setItem('carrito', JSON.stringify(cart))
     }, [cart])
 
-    const handleFinalizar = () => {
-
-        if (cart.length !== 0) {
-            return MySwal.fire({
-                title: <p>Procesando pedido...</p>,
-                timer: 1500,
-                didOpen: () => {
-                    MySwal.showLoading()
-                },
-            }).then(function() {
-                navigate("/checkout");
-            })
-        }
-    }
+  
 
     return (
         <CartContext.Provider value={{
@@ -91,7 +75,6 @@ export const CartProvider = ({ children }) => {
             cartTotal,
             emptyCart,
             removeItem,
-            handleFinalizar
         }}>
             {children}
         </CartContext.Provider>

@@ -4,11 +4,30 @@ import './Cart.scss'
 import { Link } from 'react-router-dom';
 import ClearIcon from '@mui/icons-material/Clear';
 import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
 const Cart = () => {
 
-    const { cart, cartTotal, emptyCart, removeItem, handleFinalizar } = useCartContext();
+    const { cart, cartTotal, emptyCart, removeItem } = useCartContext();
+
+    const MySwal = withReactContent(Swal)
+
+    const handleFinalizar = () => {
+
+        if (cart.length !== 0) {
+            return MySwal.fire({
+                title: <p>Procesando pedido...</p>,
+                timer: 1500,
+                didOpen: () => {
+                    MySwal.showLoading()
+                },
+            }).then(function() {
+                window.location = "/checkout";
+            })
+        }
+    }
 
 
     return (
