@@ -44,10 +44,11 @@ const Checkout = () => {
 
         productos.docs.forEach((doc) => {
             const itemInCart = cart.find(item => item.id === doc.id)
+            const colorIndex = cart.map(item => item.colorIndex)
 
-            if (doc.data().color.stock >= itemInCart.cantidad) {
+            if (doc.data().color[colorIndex].stock >= itemInCart.cantidad) {
                 batch.update(doc.ref, {
-                    stock: doc.data().color.stock - itemInCart.cantidad
+                    stock: doc.data().color[colorIndex].stock - itemInCart.cantidad
                 })
             } else {
                 sinStock.push(itemInCart)

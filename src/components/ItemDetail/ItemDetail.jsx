@@ -38,7 +38,8 @@ const ItemDetail = ({ producto }) => {
             cantidad: counter,
             stock: producto.color[colorIndex].stock,
             precio: producto.color[colorIndex].precio,
-            img: producto.color[colorIndex].img[0]
+            img: producto.color[colorIndex].img[0],
+            colorIndex: colorIndex
         }
         toast('Agregado al carrito!', {
             position: "top-right",
