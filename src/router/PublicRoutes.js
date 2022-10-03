@@ -9,7 +9,6 @@ import Cart from '../components/Cart/Cart'
 import Login from '../components/Login/Login'
 import Checkout from '../components/Checkout/Checkout'
 
-
 const PublicRoutes = () => {
 
     return (

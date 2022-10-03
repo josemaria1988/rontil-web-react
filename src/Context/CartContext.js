@@ -64,20 +64,7 @@ export const CartProvider = ({ children }) => {
         localStorage.setItem('carrito', JSON.stringify(cart))
     }, [cart])
 
-    const handleFinalizar = () => {
-
-        if (cart.length !== 0) {
-            return MySwal.fire({
-                title: <p>Procesando pedido...</p>,
-                timer: 1500,
-                didOpen: () => {
-                    MySwal.showLoading()
-                },
-            }).then(function() {
-                window.location = "/checkout";
-            })
-        }
-    }
+  
 
     return (
         <CartContext.Provider value={{
@@ -88,7 +75,6 @@ export const CartProvider = ({ children }) => {
             cartTotal,
             emptyCart,
             removeItem,
-            handleFinalizar
         }}>
             {children}
         </CartContext.Provider>

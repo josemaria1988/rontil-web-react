@@ -1,62 +1,35 @@
-import { createContext, useContext, useState } from "react";
-
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { createContext, useContext, useEffect, useState } from "react";
+import { auth } from "../Firebase/config";
 
 
 export const LoginContext = createContext()
 
-const usuarios = [
-    {
-        email: 'abc@abc.com',
-        password: '1234'
-    },
-    {
-        email: 'santiago@denis.com',
-        password: '1234'
-    },
-    {
-        email: 'conrado@lanusse.com',
-        password: 'coder'
-    },
-    {
-        email: 'josemaria@rontil.com',
-        password: 'eltop1deltop10'
-    }
-]
-
 export const LoginProvider = ({children}) => {
 
-    const [user, setUser] = useState({
-        user: '',
-        logged: false
-    })
+    const [activeUser, setActiveUser] = useState(null)
+    
+    const signUp = (auth, email, password) => {
+        createUserWithEmailAndPassword(auth, email, password);
+    }
 
-    const login = (values) => {
-        const match = usuarios.find(user => user.email === values.email)
-
-        if (match) {
-            if (match.password === values.pass) {
-                setUser({
-                    user: match.email,
-                    logged: true
-                })
-            } else {
-                alert("Password incorrecto")
-            }
-        } else {
-            alert("Email incorrecto")
-        }
+    const signIn = (auth, email, password) => {
+        signInWithEmailAndPassword(auth, email, password);
     }
 
     const logout = () => {
-        setUser({
-            user: '',
-            logged: false
-        })
+        signOut(auth)
     }
+  
+    useEffect(() => {
+        onAuthStateChanged(auth, currentUser => {
+            setActiveUser(currentUser)
+        })
+    }, [])
 
 
     return (
-        <LoginContext.Provider value={{user, login, logout}}>
+        <LoginContext.Provider value={{activeUser, signUp, signIn, logout}}>
             {children}
         </LoginContext.Provider>
     )

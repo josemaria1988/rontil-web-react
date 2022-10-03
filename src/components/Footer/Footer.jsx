@@ -6,8 +6,11 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/img/logo.png'
+import { useLoginContext } from '../../Context/LoginContext';
 
 const Footer = () => {
+
+    const { activeUser } = useLoginContext()
 
     return (
         <>
@@ -24,10 +27,15 @@ const Footer = () => {
 
             <ul className="footer-menu-container">
                 <li><Link className="menu-footer-link" to="/">Inicio</Link></li>
-                <li><Link className="menu-footer-link" to="/productos">Productos</Link></li>
+                <li><Link className="menu-footer-link" to="/">Productos</Link></li>
                 <li><Link className="menu-footer-link" to="/nosotros">Nosotros</Link></li>
                 <li><Link className="menu-footer-link" to="/contacto">Contacto</Link></li>
-                <li><Link className="menu-footer-link" to="/login">Usuario</Link></li>
+                {
+                    activeUser ?
+                    <li><Link className="menu-footer-link" to="/usuario">Perfil</Link></li>
+                    :
+                    ''
+                }
             </ul>
             <span className="copyright">2022, José María Sosa. All rights reserved.</span>
                 

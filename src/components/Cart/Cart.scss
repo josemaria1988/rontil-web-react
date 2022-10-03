@@ -100,15 +100,6 @@
    margin-bottom: 5px;
   }
 
-  .btn-finalizar-compra{
-   padding-top: 5px;
-   font-size: 14px;
-   font-family: ‘Open Sans’;
-   font-weight: 600;
-   color: #1687d9;
-   cursor: pointer;
-  }
-
   .btn-borrar-todo{
    padding-top: 5px;
    font-size: 14px;
@@ -132,6 +123,9 @@
    width: 200px;
    padding: 10px;
    color: #034574;
+   font-weight: 600;
+   font-family: ‘Open Sans’;
+   font-size: 14px;
    border: 1px solid #034574;
    border-radius: 4px;
    transition: all 400ms ease;
