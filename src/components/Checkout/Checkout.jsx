@@ -50,7 +50,7 @@ const Checkout = () => {
         const ordenesRef = collection(db, 'ordenes')
         const productosRef = collection(db, 'stockProductos')
     
-        const q = query(productosRef, where(documentId(), 'in', cart.map(item => item.id)))
+        const q = query(productosRef, where(documentId(), 'in', cart.map(item => item.id.toString())))
 
         const productos = await getDocs(q)
 
@@ -88,7 +88,7 @@ const Checkout = () => {
 
     if (orderId) {
         return (
-            <div className="container my-5">
+            <div className="container-checkout">
                 <h2>Compra exitosa!</h2>
                 <hr/>
                 <p>Tu número de orden es: <strong>{orderId}</strong></p>
@@ -127,6 +127,16 @@ const Checkout = () => {
                                 name="email" 
                                 value={values.email}
                                 placeholder="Email" />
+                        </div>
+                        <div className="contacto-input-wrapper">
+                            <label className="contact-label">Dirección</label>
+                            <input 
+                                onChange={handleInputChange} 
+                                className="input-contacto" 
+                                type="text" 
+                                name="direccion" 
+                                value={values.direccion}
+                                placeholder="Dirección" />
                         </div>
                         <div className="contacto-input-wrapper">
                             <label className="contact-label">Teléfono</label>
