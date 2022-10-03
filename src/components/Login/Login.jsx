@@ -13,6 +13,7 @@ const Login = (prop) => {
     const emailRef = useRef(null)
     const passRef = useRef(null)
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState()
 
     const { signIn, signUp } = useLoginContext()
 
@@ -21,14 +22,13 @@ const Login = (prop) => {
             try {
                 await signIn(auth, emailRef.current.value, passRef.current.value)
                 setLoading(true)
-                navigate("/")
-                console.log(auth.currentUser)
+             /*    navigate("/") */
             }catch(error){
-                console.log(error)
+                setError(error.message)
             }finally{
-                if(prop){
+                /* if(prop){
                     navigate('/checkout')
-                }
+                } */
                 setLoading(false)
             }
     }
@@ -38,13 +38,13 @@ const Login = (prop) => {
             try {
                 await signUp(auth, emailRef.current.value, passRef.current.value)
                 setLoading(true)
-                navigate("/")
+               /*  navigate("/") */
             }catch(error){
-                console.log(auth.currentUser)
+                setError(error.message)
             }finally {
-                if(prop){
+                /* if(prop){
                     navigate('/checkout')
-                }
+                } */
                 setLoading(false)
             }
         }
@@ -58,12 +58,13 @@ const Login = (prop) => {
 
 
                     <h2 className="login-titulo">Iniciar Sesión / Registrarse</h2>
-
+                    
                     <form className="login-form">
                         <input ref={emailRef} type="email" className="login-input" placeholder="email" />
                         <input ref={passRef} type="password" className="login-input" placeholder="password" />
                         <button onClick={handleSignIn} className="login-submit-login" value="Aceptar">Iniciar sesión </button>
                         <button onClick={handleSignUp} className="login-submit-registro" value="Aceptar">Registrarse</button>
+                    { error && <p className="error-message">{error}</p>}
                     </form>
                 </div>
             }
