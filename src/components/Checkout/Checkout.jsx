@@ -134,7 +134,7 @@ const Checkout = () => {
 
     return (
 
-        <Login prop="checkout"/>
+        <Login/>
     )
 }
 
