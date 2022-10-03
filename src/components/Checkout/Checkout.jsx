@@ -35,13 +35,8 @@ const Checkout = () => {
         const batch = writeBatch(db)
         const ordenesRef = collection(db, 'ordenes')
         const productosRef = collection(db, 'stockProductos')
-<<<<<<< HEAD
-    
-        const q = query(productosRef, where(documentId(), 'in', cart.map(item => item.id.toString())))
-=======
 
         const q = query(productosRef, where('id', 'in', cart.map(item => item.id.toString())))
->>>>>>> 92d9291595a24224ba923b40bc3e95e9ae10bc98
 
         const productos = await getDocs(q)
 
@@ -87,13 +82,6 @@ const Checkout = () => {
 
     if (orderId) {
         return (
-<<<<<<< HEAD
-            <div className="container-checkout">
-                <h2>Compra exitosa!</h2>
-                <hr/>
-                <p>Tu número de orden es: <strong>{orderId}</strong></p>
-            </div>
-=======
             <>
                 {loading ? <div className="spinner" ><MoonLoader /> </div>
                     :
@@ -110,7 +98,6 @@ const Checkout = () => {
                     </main>
                 }
             </>
->>>>>>> 92d9291595a24224ba923b40bc3e95e9ae10bc98
         )
     }
 
@@ -146,65 +133,8 @@ const Checkout = () => {
     }
 
     return (
-<<<<<<< HEAD
-        <main className="body-contacto">
-            <section className="container-contacto">
-                <div className="contacto-derecho">
-                    <h1 className="contacto-title">Tus datos</h1>
-                    <form onSubmit={handleSubmit} className="formulario-contacto">
-                        <div className="contacto-input-wrapper">
-                            <label className="contact-label">Nombre</label>
-                            <input 
-                                onChange={handleInputChange} 
-                                className="input-contacto" 
-                                type="text" 
-                                name="nombre" 
-                                value={values.nombre}
-                                placeholder="Nombre" />
-                        </div>
-                        <div className="contacto-input-wrapper">
-                            <label className="contact-label">Email</label>
-                            <input 
-                                onChange={handleInputChange} 
-                                className="input-contacto" 
-                                type="email" 
-                                name="email" 
-                                value={values.email}
-                                placeholder="Email" />
-                        </div>
-                        <div className="contacto-input-wrapper">
-                            <label className="contact-label">Dirección</label>
-                            <input 
-                                onChange={handleInputChange} 
-                                className="input-contacto" 
-                                type="text" 
-                                name="direccion" 
-                                value={values.direccion}
-                                placeholder="Dirección" />
-                        </div>
-                        <div className="contacto-input-wrapper">
-                            <label className="contact-label">Teléfono</label>
-                            <input 
-                                onChange={handleInputChange} 
-                                className="input-contacto" 
-                                type="number" 
-                                name="phone" 
-                                value={values.phone}
-                                placeholder="Teléfono" />
-                        </div>
-                        <div className="contacto-input-wrapper">
-                            <label className="contact-label">Aclaraciones adicionales</label>
-                            <textarea onChange={handleInputChange} className="input-contacto-mensaje" type="message" name="message" placeholder="Mensaje"></textarea>
-                            <button type="submit" value="submit" className="input-contacto-enviar">Confirmar</button>
-                        </div>
-                    </form>
-                </div>
-            </section>
-        </main>
-=======
 
         <Login prop="checkout"/>
->>>>>>> 92d9291595a24224ba923b40bc3e95e9ae10bc98
     )
 }
 
