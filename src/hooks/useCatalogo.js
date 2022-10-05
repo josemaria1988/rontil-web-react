@@ -5,7 +5,7 @@ import { db } from '../Firebase/config'
 
 export const useCatalogo = () => {
     const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     const { categoryId } = useParams()
 

@@ -22,6 +22,7 @@ const Checkout = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setLoading(true)
 
         const orden = {
             comprador: activeUser.uid,
@@ -134,7 +135,7 @@ const Checkout = () => {
 
     return (
 
-        <Login prop="checkout"/>
+        <Login fromCheckout="checkout"/>
     )
 }
 

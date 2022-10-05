@@ -8,13 +8,30 @@ export const LoginContext = createContext()
 export const LoginProvider = ({children}) => {
 
     const [activeUser, setActiveUser] = useState(null)
+    const [errorMessage, setError] = useState()
+    const [loading, setLoading] = useState(false)
     
     const signUp = (auth, email, password) => {
-        createUserWithEmailAndPassword(auth, email, password);
+        setLoading(true)
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+            setLoading(false)
+        })
+        .catch((error) => {
+            setError(error.message)
+            setLoading(false)
+        })
     }
 
     const signIn = (auth, email, password) => {
-        signInWithEmailAndPassword(auth, email, password);
+        setLoading(true)
+        signInWithEmailAndPassword(auth, email, password)
+        .then (() => {
+            setLoading(false)
+        })
+        .catch((error) => {
+            setError(error.message)
+        })
     }
 
     const logout = () => {
@@ -29,7 +46,7 @@ export const LoginProvider = ({children}) => {
 
 
     return (
-        <LoginContext.Provider value={{activeUser, signUp, signIn, logout}}>
+        <LoginContext.Provider value={{activeUser, signUp, signIn, logout, errorMessage, loading}}>
             {children}
         </LoginContext.Provider>
     )
