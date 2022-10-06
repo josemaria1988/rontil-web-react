@@ -7,13 +7,13 @@ import { MoonLoader } from 'react-spinners';
 
 
 
-const Login = (fromCheckout) => {
+const Login = () => {
 
     const emailRef = useRef(null)
     const passRef = useRef(null)
     const navigate = useNavigate()
 
-    const { signIn, signUp, errorMessage, loading } = useLoginContext()
+    const { signIn, signUp, errorMessage, loading, loginCart } = useLoginContext()
 
     const handleSignIn = async (e) => {
         e.preventDefault()
@@ -22,7 +22,7 @@ const Login = (fromCheckout) => {
         }catch(errorMessage) {
             console.log(errorMessage)
         }finally {
-            if(fromCheckout) {
+            if(loginCart) {
                 navigate("/checkout")
             }else {
                 navigate("/")
@@ -37,7 +37,7 @@ const Login = (fromCheckout) => {
             }catch(errorMessage){
                 console.log(errorMessage)
             }finally {
-                if(fromCheckout) {
+                if(loginCart) {
                     navigate("/checkout")
                 }else {
                     navigate("/")

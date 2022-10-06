@@ -46,7 +46,7 @@ const Navbar = () => {
                                     <Link to="/usuario" className="nav-link dropbtn">{activeUser.email}</Link>
                                     <div className="dropdown-content">
                                         <Link to="/usuario" className="dropdown-link nav-link">Mi Perfil</Link>
-                                        <span onClick={logout} className="dropdown-link nav-link">LOGOUT - <LogoutIcon/></span>
+                                        <Link to='/' onClick={logout} className="dropdown-link nav-link">LOGOUT - <LogoutIcon/></Link>
                                     </div>
                                 </div>
                             </li>

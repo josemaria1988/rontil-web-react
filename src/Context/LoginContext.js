@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/config";
 
@@ -10,6 +10,7 @@ export const LoginProvider = ({children}) => {
     const [activeUser, setActiveUser] = useState(null)
     const [errorMessage, setError] = useState()
     const [loading, setLoading] = useState(false)
+    const [loginCart, setLoginCart] = useState(false)
     
     const signUp = (auth, email, password) => {
         setLoading(true)
@@ -31,6 +32,7 @@ export const LoginProvider = ({children}) => {
         })
         .catch((error) => {
             setError(error.message)
+            setLoading(false)
         })
     }
 
@@ -44,9 +46,21 @@ export const LoginProvider = ({children}) => {
         })
     }, [])
 
+    const updateUserProfile = (name, fotoURL) => {
+
+        updateProfile(activeUser, {
+            displayName: name, photoURL: fotoURL
+          }).then(() => {
+            // Profile updated!
+            // ...
+          }).catch((error) => {
+            console.log(error.message)
+          });
+    }
+
 
     return (
-        <LoginContext.Provider value={{activeUser, signUp, signIn, logout, errorMessage, loading}}>
+        <LoginContext.Provider value={{activeUser, signUp, signIn, logout, errorMessage, loading, loginCart, setLoginCart, updateUserProfile}}>
             {children}
         </LoginContext.Provider>
     )
