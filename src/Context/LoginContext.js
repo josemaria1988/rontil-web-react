@@ -12,11 +12,13 @@ export const LoginProvider = ({children}) => {
     const [loading, setLoading] = useState(false)
     const [loginCart, setLoginCart] = useState(false)
     
-    const signUp = (auth, email, password) => {
+    const signUp = (auth, displayName, phoneNumber, photoURL, email, password) => {
         setLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
             setLoading(false)
+            updateProfile(auth.currentUser, {
+                displayName: displayName, phoneNumber: phoneNumber, photoURL: photoURL})
         })
         .catch((error) => {
             setError(error.message)

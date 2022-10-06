@@ -23,7 +23,7 @@ const Profile = () => {
         e.preventDefault()
         updateUserProfile(values.name, values.fotoURL)
     }
-
+console.log(activeUser)
     return (
         <>
 
@@ -32,6 +32,7 @@ const Profile = () => {
                 <ul>
                     <li><img src={activeUser.photoURL} alt={activeUser.displayName}/></li>
                     <li>Nombre: {activeUser.displayName}</li>
+                    <li>Telefono: {activeUser.phoneNumber}</li>
                     <li>Email: {activeUser.email}</li>
                     <li>ID Usuario: {activeUser.uid}</li>
                 </ul>
