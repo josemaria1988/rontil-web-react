@@ -23,37 +23,41 @@ const Profile = () => {
         e.preventDefault()
         updateUserProfile(values.name, values.fotoURL)
     }
-console.log(activeUser)
+
     return (
         <>
 
             <div className="div-update-section">
-                <h4>Datos del Perfil</h4>
-                <ul>
-                    <li><img src={activeUser.photoURL} alt={activeUser.displayName}/></li>
-                    <li>Nombre: {activeUser.displayName}</li>
-                    <li>Telefono: {activeUser.phoneNumber}</li>
-                    <li>Email: {activeUser.email}</li>
-                    <li>ID Usuario: {activeUser.uid}</li>
+                <h4 className="titulo-respuesta">Datos del Perfil</h4>
+                <ul className="ul-update-section">
+                    <li className="li-update-section"> {
+                        activeUser.photoURL ? <img className="photo-update-section" src={activeUser.photoURL} alt={activeUser.displayName}/>
+                        :
+                        <img className="nav-user-photo" src="https://adscvcongreso2022.onsitevents.com/assets/imgs/default/default-logo.jpg" alt="photoURL"/> }
+                            </li>
+                    <li className="li-update-section">Nombre: {activeUser.displayName}</li>
+                    <li className="li-update-section">Telefono: {activeUser.phoneNumber}</li>
+                    <li className="li-update-section">Email: {activeUser.email}</li>
+                    <li className="li-update-section">ID Usuario: {activeUser.uid}</li>
                 </ul>
 
                 <div>
-                    <h4>Actualiza tus Datos</h4>
+                    <h4 className="titulo-respuesta">Actualiza tus Datos</h4>
 
-                    <form onSubmit={handleUpdateUser}>
-                        <label>Nombre:</label>
-                        <input name='name' type={'name'} value={values.name} onChange={handleInputChange}></input>
+                    <form className="form-update-section"onSubmit={handleUpdateUser}>
+                        <label className="label-update-section">Nombre:</label>
+                        <input className="input-update-section" name='name' type={'name'} value={values.name} onChange={handleInputChange}></input>
 
-                        <label>Foto de Perfil: URL</label>
-                        <input name='fotoURL' type={'fotoURL'} value={values.fotoURL} onChange={handleInputChange}></input>
-                        <button type="submit">Confirmar</button>
+                        <label className="label-update-section">Foto de Perfil: URL</label>
+                        <input className="input-update-section" name='fotoURL' type={'fotoURL'} value={values.fotoURL} onChange={handleInputChange}></input>
+                        <button className="submit-update-section" type="submit">Confirmar</button>
                     </form>
                 </div>
             </div>
             <div className="body-confirmado">
 
                 <div className="container-confirmado">
-                    <h1 className="titulo-respuesta">Bienvenido a tu perfil {user.email}</h1>
+                    <h1 className="titulo-respuesta">Bienvenido a tu perfil {user.displayName}</h1>
                     <h4 className="codigo-respuesta">Estas son tus compras</h4>
 
                     {

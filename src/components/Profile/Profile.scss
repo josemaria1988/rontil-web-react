@@ -1,20 +1,9 @@
 .body-confirmado {
     display: flex;
-    margin-top: 100px;
+    margin-top: 25px;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-}
-
-.container-confirmado {
-    margin-top: 100px;
-    padding: 15px;
-    height: 85%;
-    margin-top: 150px;
-    margin-bottom: 150px;
-    background-color: whitesmoke;
-    border-radius: 20px;
-    box-shadow: 0px 25px 40px grey
 }
 
 .titulo-respuesta {
@@ -93,4 +82,71 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.ul-update-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    list-style: none;
+    margin: 25px;
+}
+
+.photo-update-section {
+    height: 350px;
+}
+
+.li-update-section {
+    margin: 5px;
+    
+}
+
+.form-update-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.label-update-section {
+    font-size: 24px;
+}
+
+.input-update-section {
+    margin: 10px;
+    padding: 5px;
+    width: 300px;
+    background-color: whitesmoke;
+    border: none;
+    font-size: 18px;
+    border-color: brown;
+    box-shadow: 10px 5px 5px grey;
+}
+
+.input-update-section:focus {
+    outline-color: white;
+    background-color: brown;
+    color: #fff;
+}
+
+.submit-update-section {
+    padding: 10px;
+    margin: 5px;
+    color: #034574;
+    font-weight: 600;
+    font-family: ‘Open Sans’;
+    font-size: 24px;
+    border: 1px solid #034574;
+    border-radius: 5%;
+    transition: all 400ms ease;
+    text-decoration: none;
+}
+
+
+.submit-update-section:hover {
+    background: #034574;
+    color: #fff;
+    cursor: pointer;
 }

@@ -43,7 +43,9 @@ const Navbar = () => {
 
                             <li className="nav-menu-item">
                                 <div className="dropdown">
-                                    <Link to="/usuario" className="nav-link dropbtn">{activeUser.email}</Link>
+                                    <Link to="/usuario" className="nav-link dropbtn">
+                                        {
+                                            activeUser.photoURL ? <img className="nav-user-photo"src={activeUser.photoURL} alt="photoURL"/> : <img className="nav-user-photo" src="https://adscvcongreso2022.onsitevents.com/assets/imgs/default/default-logo.jpg" alt="photoURL"/> } {activeUser.displayName}</Link>
                                     <div className="dropdown-content">
                                         <Link to="/usuario" className="dropdown-link nav-link">Mi Perfil</Link>
                                         <Link to='/' onClick={logout} className="dropdown-link nav-link">LOGOUT - <LogoutIcon/></Link>
