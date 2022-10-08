@@ -26,6 +26,7 @@ const Checkout = () => {
 
         const orden = {
             comprador: activeUser.uid,
+            nombre: activeUser.displayName,
             contacto: activeUser.email,
             direccion: values.direccion,
             items: cart,
