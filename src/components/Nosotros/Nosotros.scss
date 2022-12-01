@@ -45,6 +45,17 @@
     color: brown;
 }
 
+.quienes-somos {
+    margin-top: 50px;
+    max-width: 50%;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.areas-mercado {
+    flex-direction: row;
+}
+
 @media screen and (max-width: 900px){
     .iconos-father {
         flex-direction: column;

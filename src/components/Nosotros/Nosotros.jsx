@@ -9,6 +9,38 @@ const Nosotros = () => {
     return (
         <div className="nosotros-container">
             <h1 className="nosotros-titulo">Sobre nosotros</h1>
+            <div className="quienes-somos">
+                
+                <h2>Quienes somos</h2>
+                <p>RONTIL S.A. nació en 1996 con el afán de proveer repuestos a las empresas agroindustriales uruguayas (plantas de acopio y molinos) con una respuesta mucho más rápida que la habitual en el mercado</p>
+                <p>Pasaron los años y la cartera de representaciones y productos se amplió, actualmente se puede dividir la oferta de la empresa en dos grandes áreas.</p>
+                <div className="areas-mercado">
+                <h3>MEDIO AMBIENTE</h3>
+                <ul>
+                    <li>Compactadores de residuos</li>
+                    <li>Equipos alza contenedores</li>
+                    <li>Contenedores para residuos</li>
+                    <li>Cestos papeleros</li>
+                    <li>Columnas de recolección selectiva</li>
+                    <li>Contenedores soterrados</li>
+                    <li>Cestos especiales (pilas, caninos, compost, oficina)</li>
+                </ul>
+                </div>
+                <div className="areas-mercado">
+                <h3>AGROINDUSTRIA</h3>
+                <ul>
+                    <li>Silos</li>
+                    <li>Secadoras</li>
+                    <li>Transportadores</li>
+                    <li>Limpieza</li>
+                    <li>Tornillería</li>
+                    <li>Canalización</li>
+                    <li>Cangilones</li>
+                    <li>Bandas</li>
+                    <li>Análisis</li>
+                </ul>
+                </div>
+            </div>
              <div className="iconos-father">
                 <div className="iconos-nosotros">
                     <SecurityIcon className="iconos"/>
