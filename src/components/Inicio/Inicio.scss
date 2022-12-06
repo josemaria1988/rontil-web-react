@@ -1,5 +1,12 @@
+
 .caja-inicio {
     margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.paper-carousel {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
