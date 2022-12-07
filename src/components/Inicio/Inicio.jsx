@@ -10,7 +10,7 @@ import jorgensen from '../../assets/img/jorgensen.jpg'
 const Item = (props) => {
     return (
             <Paper className="paper-carousel">
-                <h2>{props.item.name}</h2>
+                <h2 className="titulo-carousel">{props.item.name}</h2>
                 <img src={props.item.img} alt={props.item.imge}/>
                 <Button className="CheckButton">
                     Ver más!
