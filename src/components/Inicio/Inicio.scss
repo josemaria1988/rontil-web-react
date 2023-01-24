@@ -33,17 +33,8 @@
     background-color: #034574;
     transition: 0.5s;
 }
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    min-height: 100vh;
-    background: whitesmoke;
-  }
   
-  body .container {
+.container-inicio {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +43,7 @@ body {
     margin: 20px 0;
   }
   
-  body .container .card {
+.card-inicio {
     position: relative;
     min-width: 420px;
     height: 640px;
@@ -64,7 +55,7 @@ body {
     transition: 0.5s;
   }
   
-  body .container .card .box {
+.box-inicio {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -79,26 +70,31 @@ body {
     transition: 0.5s;
   }
   
-  body .container .card .box:hover {
+.box-inicio:hover {
     transform: translateY(-20px);
     background: #034574;
   }
   
-  body .container .card .box .content {
+.content-inicio {
     padding: 20px;
     text-align: center;
   }
+  .container-inicio img {
+    object-fit: fill;
+    max-height: 300px;
+  }
   
-  body .container .card .box .content h3 {
-    font-size: 1.8rem;
+.content-inicio h3 {
+    padding: 30px;
+    font-size: 1.9rem;
     color: #fff;
     z-index: 1;
     transition: 0.5s;
     margin-bottom: 15px;
   }
   
-  body .container .card .box .content p {
-    font-size: 1rem;
+.content-inicio p {
+    font-size: 1.2rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.9);
     z-index: 1;
@@ -106,6 +102,7 @@ body {
   }
   
   .button-inicio {
+    margin: 1rem;
     color: brown;
     text-decoration: none;
     font-weight: bold;
