@@ -13,7 +13,7 @@ const Inicio = (props) => {
     }
 
     return (
-        <>
+        <div className="caja-inicio">
             <Banner />
             <div className="container-inicio">
                 <div className="card-inicio">
@@ -38,7 +38,7 @@ const Inicio = (props) => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
