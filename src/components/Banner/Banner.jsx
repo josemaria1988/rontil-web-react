@@ -1,21 +1,21 @@
-import React from 'react'
-import './Banner.scss'
+import React from 'react';
+import './Banner.scss';
 import '../Inicio/Inicio.scss';
 import Carousel from 'react-material-ui-carousel';
 import { Paper, Button } from '@mui/material';
-import secadoratromink from '../../assets/img/secadoratromink.jpg'
-import portada2 from '../../assets/img/portada2.jpg'
-import jorgensen from '../../assets/img/jorgensen.jpg'
+import secadoratromink from '../../assets/img/secadoratromink.jpg';
+import portada2 from '../../assets/img/portada2.jpg';
+import jorgensen from '../../assets/img/jorgensen.jpg';
 
 const Item = (props) => {
     return (
-            <Paper className="paper-carousel">
-                <h2 className="titulo-carousel">{props.item.name}</h2>
-                <img src={props.item.img} alt={props.item.imge}/>
-                <Button className="CheckButton">
-                    Ver más!
-                </Button>
-            </Paper>
+        <Paper className="paper-carousel">
+            <h2 className="titulo-carousel">{props.item.name}</h2>
+            <img src={props.item.img} alt={props.item.imge} />
+            <Button className="CheckButton">
+                Ver más!
+            </Button>
+        </Paper>
     )
 }
 
@@ -40,13 +40,15 @@ const Banner = () => {
     ]
 
     return (
+
         <div className="caja-inicio">
-        <Carousel>
-            {
-                items.map((item, i) => <Item key={i} item={item} />)
-            }
-        </Carousel>
+            <Carousel>
+                {
+                    items.map((item, i) => <Item key={i} item={item} />)
+                }
+            </Carousel>
         </div>
+
     )
 }
 
