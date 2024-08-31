@@ -28,7 +28,7 @@ const Navbar = () => {
                     <li className="nav-menu-item"><Link to="/" className="nav-link" onClick={handleMenuClick}>Inicio</Link></li>
                     <li className="nav-menu-item">
                         <div className="dropdown">
-                            <Link to='/' className="nav-link dropbtn">Productos</Link>
+                            <Link to='/productos' className="nav-link dropbtn">Tienda en Línea</Link>
                             <div className="dropdown-content">
                                 <Link to='/productos/Contenedores' className="dropdown-link nav-link" onClick={handleMenuClick}>Contenedores</Link>
                                 <Link to='/productos/Papelera' className="dropdown-link nav-link" onClick={handleMenuClick}>Papeleras</Link>

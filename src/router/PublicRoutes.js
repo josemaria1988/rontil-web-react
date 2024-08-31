@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Navbar from '../components/navbar/NavBar'
 import Footer from '../components/Footer/Footer'
+import Inicio from '../components/Inicio/Inicio';
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailContainer'
 import Nosotros from '../components/Nosotros/Nosotros'
@@ -16,8 +17,9 @@ const PublicRoutes = () => {
             <Navbar />
             
             <Routes>
-
-                <Route path='/' element={<ItemListContainer />} />
+                
+                <Route path='/' element={<Inicio/>} />
+                <Route path='/productos' element={<ItemListContainer />} />
                 <Route path='/productos/:categoryId' element={<ItemListContainer />} />
                 <Route path='/nosotros' element={<Nosotros />} />
                 <Route path='/contacto' element={<Contacto />} />
