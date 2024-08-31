@@ -33,6 +33,7 @@
 .imagen-contacto {
     width: 100%;
     min-height: 400px;
+    object-fit: contain;
 }
 .texto-imagen {
     position: absolute;
@@ -124,6 +125,31 @@
   
     .container-contacto {
         flex-direction: column;
-        flex-wrap: wrap;
+        padding: 20px;
     }
+
+    .contacto-izquierdo, .contacto-derecho {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contacto-title {
+        font-size: 50px; /* Reducimos el tamaño del título en pantallas más pequeñas */
+        margin-bottom: 30px;
+    }
+
+    .imagen-contacto {
+        max-width: 100%;
+        margin: 10px;
+        padding: 100px;
+    }
+
+    .texto-imagen {
+        font-size: 16px;
+    }
+
+    .contacto-derecho {
+        padding: 10px; /* Quitamos el padding lateral */
+    }
+
 }
