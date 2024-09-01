@@ -4,7 +4,6 @@ import { useCatalogo } from '../../hooks/useCatalogo'
 import './ItemListContainer.scss';
 import ItemList from "../ItemList/ItemList";
 import MoonLoader from "react-spinners/MoonLoader";
-import Banner from '../Banner/Banner.jsx';
 import '../Spinners/MoonLoader.scss';
 import Searchbar from '../Searchbar/Searchbar.jsx'
 
@@ -19,7 +18,6 @@ export default function ItemListContainer() {
     {loading ? <div className="spinner" ><MoonLoader/> </div>  
      : 
      <div>
-      <Banner/>
       <div className="searchbar-container">
         <Searchbar className="searchbar"/>
       </div>

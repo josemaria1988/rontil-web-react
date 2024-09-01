@@ -10,72 +10,72 @@ let stockProductos = [{
         value: 'black',
         stock: 10,
         precio: 3100,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-gris.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+        img: ['/assets/imagenes/mgb120_euro2_color_negro.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_01.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
       {
         id:1002,
         value: 'green',
         stock: 8,
         precio: 3500,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-verde.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+        img: ['/assets/imagenes/mgb120_euro2_verde.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_01.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
       {
         id:1003,
         value: 'brown',
         stock: 5,
         precio: 3900,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-marron.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+        img: ['/assets/imagenes/mgb120_euro2_marron.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_01.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
       {
         id:1004,
         value: 'blue',
         stock: 7,
         precio: 3500,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-azul.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+        img: ['/assets/imagenes/mgb120_euro2_azul.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_01.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
       {
         id:1005,
         value: 'white',
         stock: 9,
         precio: 4200,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-blanco.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+        img: ['/assets/imagenes/mgb120_euro2_blanco.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_01.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
       {
         id:1006,
         value: 'red',
         stock: 4,
         precio: 3900,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-rojo.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+        img: ['/assets/imagenes/mgb120_euro2_rojo.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_01.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
       {
         id:1007,
         value: 'yellow',
         stock: 3,
         precio: 3900,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-amarillo.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+        img: ['/assets/imagenes/mgb120_euro2_amarillo.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_01.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
       {
         id:1008,
         value: 'orange',
         stock: 1,
         precio: 3500,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-naranja.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+        img: ['/assets/imagenes/mgb120_euro2_naranja.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_01.jpg',
+          '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       }
     ]
   },
@@ -91,7 +91,7 @@ let stockProductos = [{
         value: 'black',
         stock: 10,
         precio: 4200,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/Contenedor-de-Residuos-SULO-2-Ruedas-240-Litros-Insonorizado-gris.jpg',
+        img: ['/assets/imagenes/mgb240_euro2_colour_negro.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
       },
@@ -100,7 +100,7 @@ let stockProductos = [{
         value: 'green',
         stock: 8,
         precio: 4500,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/Contenedor-de-Residuos-SULO-2-Ruedas-240-Litros-Insonorizado-verde.jpg',
+        img: ['/assets/imagenes/mgb240_euro2_colour_verde.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
       },
@@ -109,7 +109,7 @@ let stockProductos = [{
         value: 'brown',
         stock: 5,
         precio: 4800,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/Contenedor-de-Residuos-SULO-2-Ruedas-240-Litros-Colores-Premium-marron.jpg',
+        img: ['/assets/imagenes/mgb240_euro2_colour_marron.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
       },
@@ -118,7 +118,7 @@ let stockProductos = [{
         value: 'blue',
         stock: 7,
         precio: 4200,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/Contenedor-de-Residuos-SULO-2-Ruedas-240-Litros-Colores-Premium-azul.jpg',
+        img: ['/assets/imagenes/mgb240_euro2_colour_azul.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
       },
@@ -127,7 +127,7 @@ let stockProductos = [{
         value: 'white',
         stock: 9,
         precio: 5100,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/Contenedor-de-Residuos-SULO-2-Ruedas-240-Litros-Colores-Premium-blanco-555x654.jpg',
+        img: ['/assets/imagenes/mgb240_euro2_colour_blanco.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
       },
@@ -136,7 +136,7 @@ let stockProductos = [{
         value: 'red',
         stock: 4,
         precio: 4800,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/Contenedor-de-Residuos-SULO-2-Ruedas-240-Litros-Colores-Premium-rojo.jpg',
+        img: ['/assets/imagenes/mgb240_euro2_colour_rojo.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
       },
@@ -145,7 +145,7 @@ let stockProductos = [{
         value: 'yellow',
         stock: 3,
         precio: 4800,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/Contenedor-de-Residuos-SULO-2-Ruedas-240-Litros-Colores-Premium-amarillo.jpg',
+        img: ['/assets/imagenes/mgb240_euro2_colour_amarillo.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
       },
@@ -154,9 +154,9 @@ let stockProductos = [{
         value: 'orange',
         stock: 1,
         precio: 4500,
-        img: ['https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/Contenedor-de-Residuos-SULO-2-Ruedas-240-Litros-Colores-Premium-naranja-555x606.jpg',
+        img: ['/assets/imagenes/mgb240_euro2_colour_naranja.jpg',
           'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas.jpg',
-          'https://d27dpjgffpea1z.cloudfront.net/wp-content/uploads/2019/05/contenedor-de-residuos-120-lt-medidas-2.jpg']
+          '/assets/imagenes/mgb240_euro2_view_01.jpg']
       }
     ]
   },

@@ -18,7 +18,7 @@ const PublicRoutes = () => {
             
             <Routes>
                 
-                <Route path='/' element={<Inicio/>} />
+                <Route path='/' element={<Inicio/> } />
                 <Route path='/productos' element={<ItemListContainer />} />
                 <Route path='/productos/:categoryId' element={<ItemListContainer />} />
                 <Route path='/nosotros' element={<Nosotros />} />

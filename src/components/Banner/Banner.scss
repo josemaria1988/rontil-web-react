@@ -1,19 +1,32 @@
-.banner-container {
-    width: 100%;
+.caja-inicio {
+    width: 100%; /* El carrusel ocupa todo el ancho de la página */
+    max-width: 100%;
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+.paper-carousel {
+    position: relative;
     text-align: center;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.bannerImage {
-    width: 75%;
+.paper-carousel img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 500px; /* Establece una altura máxima para la imagen */
+    object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin recortarse */
 }
 
-.spinner {
-    display: flex;
-    position: fixed;
-    width: 100vw;
-    height: 50vh;
-    justify-content: center;
-    align-items: center;
-    background: whitesmoke;
+.CheckButton {
+    margin-top: 15px;
+    background-color: #034574;
+    color: whitesmoke;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-transform: none;
+}
 
+.CheckButton:hover {
+    background-color: #01234a;
 }
