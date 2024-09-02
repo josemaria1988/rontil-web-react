@@ -19,7 +19,7 @@ let stockProductos = [{
         value: 'green',
         stock: 8,
         precio: 3500,
-        img: ['/assets/imagenes/mgb120_euro2_verde.jpg',
+        img: ['/assets/imagenes/mgb120_euro2_color_verde.jpg',
           '/assets/imagenes/mgb120_euro2_tech_01.jpg',
           '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
@@ -28,7 +28,7 @@ let stockProductos = [{
         value: 'brown',
         stock: 5,
         precio: 3900,
-        img: ['/assets/imagenes/mgb120_euro2_marron.jpg',
+        img: ['/assets/imagenes/mgb120_euro2_color_marron.jpg',
           '/assets/imagenes/mgb120_euro2_tech_01.jpg',
           '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
@@ -37,7 +37,7 @@ let stockProductos = [{
         value: 'blue',
         stock: 7,
         precio: 3500,
-        img: ['/assets/imagenes/mgb120_euro2_azul.jpg',
+        img: ['/assets/imagenes/mgb120_euro2_color_azul.jpg',
           '/assets/imagenes/mgb120_euro2_tech_01.jpg',
           '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
@@ -46,7 +46,7 @@ let stockProductos = [{
         value: 'white',
         stock: 9,
         precio: 4200,
-        img: ['/assets/imagenes/mgb120_euro2_blanco.jpg',
+        img: ['/assets/imagenes/mgb120_euro2_color_blanco.jpg',
           '/assets/imagenes/mgb120_euro2_tech_01.jpg',
           '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
@@ -55,7 +55,7 @@ let stockProductos = [{
         value: 'red',
         stock: 4,
         precio: 3900,
-        img: ['/assets/imagenes/mgb120_euro2_rojo.jpg',
+        img: ['/assets/imagenes/mgb120_euro2_color_rojo.jpg',
           '/assets/imagenes/mgb120_euro2_tech_01.jpg',
           '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
@@ -64,7 +64,7 @@ let stockProductos = [{
         value: 'yellow',
         stock: 3,
         precio: 3900,
-        img: ['/assets/imagenes/mgb120_euro2_amarillo.jpg',
+        img: ['/assets/imagenes/mgb120_euro2_color_amarillo.jpg',
           '/assets/imagenes/mgb120_euro2_tech_01.jpg',
           '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       },
@@ -73,7 +73,7 @@ let stockProductos = [{
         value: 'orange',
         stock: 1,
         precio: 3500,
-        img: ['/assets/imagenes/mgb120_euro2_naranja.jpg',
+        img: ['/assets/imagenes/mgb120_euro2_color_naranja.jpg',
           '/assets/imagenes/mgb120_euro2_tech_01.jpg',
           '/assets/imagenes/mgb120_euro2_tech_02.jpg']
       }
