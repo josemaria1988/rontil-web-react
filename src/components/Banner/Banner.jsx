@@ -10,7 +10,6 @@ import citysolar from '../../assets/img/CitySolar-2.0.png'
 
 const Item = (props) => {
     return (
-        <div className="caja-inicio">
             <Paper className="paper-carousel">
                 <h2 className="titulo-carousel">{props.item.name}</h2>
                 <img src={props.item.img} alt={props.item.imge} />
@@ -18,7 +17,6 @@ const Item = (props) => {
                     Ver más!
                 </Button>
             </Paper>
-        </div>
     )
 }
 
@@ -48,13 +46,11 @@ const Banner = () => {
     ]
 
     return (
-        <div className="caja-inicio">
             <Carousel>
                 {
                     items.map((item, i) => <Item key={i} item={item} />)
                 }
             </Carousel>
-        </div>
     )
 }
 
