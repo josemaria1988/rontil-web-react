@@ -16,8 +16,7 @@ const Inicio = (props) => {
                     <ul className="ul-list">
                         <li className="list-element">Compactadores de residuos</li>
                         <li className="list-element">Equipos alza contenedores</li>
-                        <li className="list-element">Contenedores para residuos</li>
-                        <li className="list-element">Cestos papeleros</li>
+                        <li className="list-element">Contenedores para residuos, Papeleras</li>
                         <li className="list-element">Columnas de recolección selectiva</li>
                         <li className="list-element">Contenedores soterrados</li>
                         <li className="list-element">Cestos especiales (pilas, caninos, compost, oficina)</li>
@@ -28,15 +27,12 @@ const Inicio = (props) => {
                     <img src="/assets/imagenes/agroindustria1.jpg" alt="Agroindustria" />
                     <h3 className="nosotros-titulo">AGROINDUSTRIA</h3>
                     <ul className="ul-list">
-                        <li className="list-element">Silos</li>
-                        <li className="list-element">Secadoras</li>
-                        <li className="list-element">Transportadores</li>
-                        <li className="list-element">Limpieza</li>
+                        <li className="list-element">Silos, Transportadores, Elevadores</li>
+                        <li className="list-element">Secadoras, Limpieza</li>
                         <li className="list-element">Tornillería</li>
                         <li className="list-element">Canalización</li>
                         <li className="list-element">Cangilones</li>
-                        <li className="list-element">Bandas</li>
-                        <li className="list-element">Análisis</li>
+                        <li className="list-element">Análisis, Laboratorio</li>
                     </ul>
                 </div>
             </div>
