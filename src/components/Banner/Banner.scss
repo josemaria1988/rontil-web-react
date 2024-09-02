@@ -1,4 +1,5 @@
 .paper-carousel img {
+    background-color: whitesmoke;
     width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
     max-height: 500px; /* Establece una altura máxima para la imagen */
@@ -16,4 +17,9 @@
 
 .CheckButton:hover {
     background-color: #01234a;
+}
+
+.diveCarrusel {
+    background-color: whitesmoke;
+    width: 100%;
 }

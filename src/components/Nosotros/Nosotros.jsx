@@ -11,44 +11,44 @@ const Nosotros = () => {
             <h1 className="nosotros-titulo">Sobre nosotros</h1>
             <div className="quienes-somos">
 
-                        <h2 className='nosotros-titulo'>Quienes somos</h2>
+                <h2 className='nosotros-titulo'>Quienes somos</h2>
 
-                        <div className='iconos-nosotros'>
-                            <p className="list-element">RONTIL S.A. nació en 1996 con el afán de proveer repuestos a las empresas agroindustriales uruguayas (plantas de acopio y molinos) con una respuesta mucho más rápida que la habitual en el mercado</p>
-                            <p className="list-element">Pasaron los años y la cartera de representaciones y productos se amplió, actualmente se puede dividir la oferta de la empresa en dos grandes áreas.</p>
-                        </div>
+                <div className='iconos-nosotros'>
+                    <p className="list-element">RONTIL S.A. nació en 1996 con el afán de proveer repuestos a las empresas agroindustriales uruguayas (plantas de acopio y molinos) con una respuesta mucho más rápida que la habitual en el mercado</p>
+                    <p className="list-element">Pasaron los años y la cartera de representaciones y productos se amplió, actualmente se puede dividir la oferta de la empresa en dos grandes áreas.</p>
+                </div>
 
-                    <div className="iconos-nosotros inrow">
+                <div className="iconos-nosotros inrow">
 
-                    
-                        <div className="iconos-nosotros">
-                            <h3 className="nosotros-titulo">MEDIO AMBIENTE</h3>
-                            <ul className="ul-list">
-                                <li className="list-element">Compactadores de residuos</li>
-                                <li className="list-element">Equipos alza contenedores</li>
-                                <li className="list-element">Contenedores para residuos</li>
-                                <li className="list-element">Cestos papeleros</li>
-                                <li className="list-element">Columnas de recolección selectiva</li>
-                                <li className="list-element">Contenedores soterrados</li>
-                                <li className="list-element">Cestos especiales (pilas, caninos, compost, oficina)</li>
-                            </ul>
-                        </div>
 
-                        <div className="iconos-nosotros">
-                            <h3 className="nosotros-titulo">AGROINDUSTRIA</h3>
-                            <ul className="ul-list">
-                                <li className="list-element">Silos</li>
-                                <li className="list-element">Secadoras</li>
-                                <li className="list-element">Transportadores</li>
-                                <li className="list-element">Limpieza</li>
-                                <li className="list-element">Tornillería</li>
-                                <li className="list-element">Canalización</li>
-                                <li className="list-element">Cangilones</li>
-                                <li className="list-element">Bandas</li>
-                                <li className="list-element">Análisis</li>
-                            </ul>
-                        </div>
-                        </div>
+                    <div className="iconos-nosotros">
+                        <h3 className="nosotros-titulo">MEDIO AMBIENTE</h3>
+                        <ul className="ul-list">
+                            <li className="list-element">Compactadores de residuos</li>
+                            <li className="list-element">Equipos alza contenedores</li>
+                            <li className="list-element">Contenedores para residuos</li>
+                            <li className="list-element">Cestos papeleros</li>
+                            <li className="list-element">Columnas de recolección selectiva</li>
+                            <li className="list-element">Contenedores soterrados</li>
+                            <li className="list-element">Cestos especiales (pilas, caninos, compost, oficina)</li>
+                        </ul>
+                    </div>
+
+                    <div className="iconos-nosotros">
+                        <h3 className="nosotros-titulo">AGROINDUSTRIA</h3>
+                        <ul className="ul-list">
+                            <li className="list-element">Silos</li>
+                            <li className="list-element">Secadoras</li>
+                            <li className="list-element">Transportadores</li>
+                            <li className="list-element">Limpieza</li>
+                            <li className="list-element">Tornillería</li>
+                            <li className="list-element">Canalización</li>
+                            <li className="list-element">Cangilones</li>
+                            <li className="list-element">Bandas</li>
+                            <li className="list-element">Análisis</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div className="iconos-father">
                 <div className="iconos-nosotros">
