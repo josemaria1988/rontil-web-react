@@ -28,16 +28,27 @@ const Navbar = () => {
                     <li className="nav-menu-item"><Link to="/" className="nav-link" onClick={handleMenuClick}>Inicio</Link></li>
                     <li className="nav-menu-item">
                         <div className="dropdown">
-                            <Link to='/productos' className="nav-link dropbtn">Tienda en Línea</Link>
-                            <div className="dropdown-content">
-                                <Link to='/productos/Contenedores' className="dropdown-link nav-link" onClick={handleMenuClick}>Contenedores</Link>
-                                <Link to='/productos/Papelera' className="dropdown-link nav-link" onClick={handleMenuClick}>Papeleras</Link>
-                                <Link to='/productos/Compostaje' className="dropdown-link nav-link" onClick={handleMenuClick}>Compostaje</Link>
-                                <Link to='/productos/Dispensadores' className="dropdown-link nav-link" onClick={handleMenuClick}>Dispensadores</Link>
-                                <Link to='/productos/Repuestos' className="dropdown-link nav-link" onClick={handleMenuClick}>Repuestos</Link>
-                            </div>
-                        </div>
-                    </li>
+                        <Link to='/productos' className="nav-link dropbtn">Tienda en Línea</Link>
+        <div className="dropdown-content grid-dropdown">
+            <div className="dropdown-column">
+                <h4>Medio Ambiente</h4>
+                <Link to='/productos/Compactadores' className='dropdown-link nav-link' onClick={handleMenuClick}>Compactadores</Link>
+                <Link to='/productos/Contenedores' className="dropdown-link nav-link" onClick={handleMenuClick}>Contenedores</Link>
+                <Link to='/productos/Papelera' className="dropdown-link nav-link" onClick={handleMenuClick}>Papeleras</Link>
+                <Link to='/productos/Compostaje' className="dropdown-link nav-link" onClick={handleMenuClick}>Compostaje</Link>
+                <Link to='/productos/Dispensadores' className="dropdown-link nav-link" onClick={handleMenuClick}>Dispensadores</Link>
+            </div>
+            <div className="dropdown-column">
+                <h4>Agroindustria</h4>
+                <Link to='/productos/Maquinaria' className="dropdown-link nav-link" onClick={handleMenuClick}>Maquinaria</Link>
+                <Link to='/productos/Silos' className='dropdown-link nav-link' onClick={handleMenuClick}>Silos</Link>
+                <Link to='/productos/Canalizacion' className='dropdown-link nav-link' onClick={handleMenuClick}>Canalización</Link>
+                <Link to='/productos/Repuestos' className="dropdown-link nav-link" onClick={handleMenuClick}>Repuestos</Link>
+                <Link to='/productos/Herramientas' className="dropdown-link nav-link" onClick={handleMenuClick}>Herramientas</Link>
+            </div>
+        </div>
+    </div>
+</li>
 
                     <li className="nav-menu-item"><Link to='/nosotros' className="nav-link" onClick={handleMenuClick}>Nosotros</Link></li>
                     <li className="nav-menu-item"><Link to='/contacto' className="nav-link" onClick={handleMenuClick}>Contacto</Link></li>

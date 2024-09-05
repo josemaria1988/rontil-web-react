@@ -63,39 +63,58 @@
 }
 
 /* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
+.grid-dropdown {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 20px; /* Espacio entre columnas */
+    padding: 20px; /* Padding interno */
+    background-color: #f9f9f9;
+    width: 400px; /* Ajusta este valor según necesites */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 150px;
-    font-size: 15px;
-    width: 90%;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.9);
-    z-index: 1;
+.dropdown-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dropdown-column h4 {
+    margin-bottom: 10px; /* Espacio entre el título y los enlaces */
+    font-size: 18px;
+    font-weight: bold;
+    color: #034574; /* Puedes ajustar el color del título */
 }
 
 /* Links adentro de dropdown */
 .dropdown-link {
-    display: block;
-    cursor: pointer;
+    color: brown;
+    padding: 5px 0;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 /* Mostrar el dropdown en hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Mantener el color "encendido" del boton principal durante el dropdown */
-.dropdown:hover .dropbtn {
+.dropdown-link:hover {
     color: whitesmoke;
     background-color: #034574;
-    transition: 0.5s;
+    border-radius: 4px;
+    padding: 5px 10px; /* Añadimos algo de padding para el hover */
+    transition: 0.3s;
+}
+
+/* Ajustes generales del dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: grid; /* Cambiamos display a grid para las columnas */
 }
 
 .nav-link-cart {
